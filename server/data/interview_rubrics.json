@@ -1,0 +1,326 @@
+{
+  "dataset": "SkillBridge Adaptive AI Interview Rubrics",
+  "version": "2.0",
+  "purpose": "Evaluation framework for adaptive AI mock interviews. The rubric evaluates technical knowledge, targeted skill mastery, answer quality, communication and observable speaking behavior. It does not infer emotions, personality or confidence from appearance or voice.",
+  "scoring_scale": {
+    "0": "No meaningful answer or completely incorrect",
+    "1": "Very weak understanding; major misconceptions",
+    "2": "Limited understanding; partially correct",
+    "3": "Acceptable understanding; mostly correct",
+    "4": "Strong understanding; correct and reasonably detailed",
+    "5": "Excellent understanding; accurate, complete and well-reasoned"
+  },
+  "evaluation_dimensions": {
+    "technical_correctness": {
+      "category": "technical",
+      "description": "Accuracy of technical concepts in the answer.",
+      "weight": 25,
+      "score_guidelines": {
+        "0": "No technically relevant answer",
+        "1": "Major technical errors",
+        "2": "Some correct concepts but significant errors",
+        "3": "Mostly correct with minor gaps",
+        "4": "Technically strong and accurate",
+        "5": "Highly accurate with strong technical depth"
+      }
+    },
+    "skill_mastery": {
+      "category": "technical",
+      "description": "How well the student demonstrates mastery of the targeted skill.",
+      "weight": 20,
+      "score_guidelines": {
+        "0": "Cannot demonstrate the skill",
+        "1": "Very limited understanding",
+        "2": "Basic awareness only",
+        "3": "Functional understanding",
+        "4": "Strong practical understanding",
+        "5": "Advanced demonstration of the skill with depth"
+      }
+    },
+    "relevance": {
+      "category": "technical",
+      "description": "How directly the answer addresses the question.",
+      "weight": 15,
+      "score_guidelines": {
+        "0": "Completely unrelated",
+        "1": "Mostly unrelated",
+        "2": "Partially relevant",
+        "3": "Relevant but contains unnecessary content",
+        "4": "Directly relevant",
+        "5": "Highly focused and directly relevant"
+      }
+    },
+    "completeness": {
+      "category": "technical",
+      "description": "Whether important parts of the question are addressed.",
+      "weight": 5,
+      "score_guidelines": {
+        "0": "No useful content",
+        "1": "Almost entirely incomplete",
+        "2": "Only one important aspect addressed",
+        "3": "Several important aspects addressed",
+        "4": "Nearly complete",
+        "5": "Complete and comprehensive"
+      }
+    },
+    "reasoning": {
+      "category": "technical",
+      "description": "Ability to explain why a solution or decision is appropriate.",
+      "weight": 5,
+      "score_guidelines": {
+        "0": "No reasoning",
+        "1": "Unsupported statement",
+        "2": "Very weak reasoning",
+        "3": "Reasonable explanation",
+        "4": "Clear logical reasoning",
+        "5": "Deep, structured reasoning with relevant trade-offs"
+      }
+    },
+    "clarity": {
+      "category": "communication",
+      "description": "How clearly the answer is expressed.",
+      "weight": 10,
+      "score_guidelines": {
+        "0": "Impossible to understand",
+        "1": "Very difficult to understand",
+        "2": "Frequent unclear sections",
+        "3": "Generally understandable",
+        "4": "Clear explanation",
+        "5": "Exceptionally clear and easy to follow"
+      }
+    },
+    "structure": {
+      "category": "communication",
+      "description": "Organization and logical flow of the answer.",
+      "weight": 8,
+      "score_guidelines": {
+        "0": "No structure",
+        "1": "Highly disorganized",
+        "2": "Weak structure",
+        "3": "Acceptable structure",
+        "4": "Well organized",
+        "5": "Excellent logical structure"
+      }
+    },
+    "pace": {
+      "category": "communication",
+      "description": "Observable speaking rate during the response.",
+      "weight": 4,
+      "measurement": "words_per_minute",
+      "score_guidelines": {
+        "0": "Speech rate prevents meaningful communication",
+        "1": "Frequently difficult to follow because of speaking rate",
+        "2": "Noticeably too fast or too slow in several portions",
+        "3": "Generally understandable speaking rate",
+        "4": "Consistent and appropriate speaking rate",
+        "5": "Well-controlled speaking rate that supports clear communication"
+      },
+      "note": "Use only as a communication signal. Do not interpret speaking rate as intelligence, confidence, personality or technical ability."
+    },
+    "pauses": {
+      "category": "communication",
+      "description": "Observable pauses during speech.",
+      "weight": 4,
+      "measurement": "pause_count_and_duration",
+      "score_guidelines": {
+        "0": "Pauses severely disrupt the response",
+        "1": "Frequent or unusually long pauses substantially disrupt communication",
+        "2": "Several pauses interrupt the flow",
+        "3": "Pauses are generally acceptable",
+        "4": "Pauses are mostly well managed",
+        "5": "Pauses are used naturally without disrupting communication"
+      },
+      "note": "Pauses must be reported descriptively. They must not automatically be treated as negative and must not be interpreted as lack of confidence."
+    },
+    "filler_words": {
+      "category": "communication",
+      "description": "Frequency of observable filler words.",
+      "weight": 4,
+      "measurement": "fillers_per_minute",
+      "examples": [
+        "um",
+        "uh",
+        "like",
+        "you know",
+        "actually"
+      ],
+      "score_guidelines": {
+        "0": "Very frequent fillers substantially interfere with communication",
+        "1": "Frequent fillers noticeably disrupt the response",
+        "2": "Repeated filler usage is present",
+        "3": "Some filler usage but communication remains understandable",
+        "4": "Low filler usage",
+        "5": "Very low or negligible filler usage"
+      },
+      "note": "Filler-word frequency is communication feedback only. It must not be interpreted as a measure of intelligence, technical ability, confidence or personality."
+    }
+  },
+  "score_calculation": {
+    "scale": "Each evaluation dimension is scored from 0 to 5.",
+    "technical_dimensions": [
+      {
+        "dimension": "technical_correctness",
+        "weight": 25
+      },
+      {
+        "dimension": "skill_mastery",
+        "weight": 20
+      },
+      {
+        "dimension": "relevance",
+        "weight": 15
+      },
+      {
+        "dimension": "completeness",
+        "weight": 5
+      },
+      {
+        "dimension": "reasoning",
+        "weight": 5
+      }
+    ],
+    "communication_dimensions": [
+      {
+        "dimension": "clarity",
+        "weight": 10
+      },
+      {
+        "dimension": "structure",
+        "weight": 8
+      },
+      {
+        "dimension": "pace",
+        "weight": 4
+      },
+      {
+        "dimension": "pauses",
+        "weight": 4
+      },
+      {
+        "dimension": "filler_words",
+        "weight": 4
+      }
+    ],
+    "technical_weight_total": 70,
+    "communication_weight_total": 30,
+    "overall_weight_total": 100,
+    "technical_performance": "Technical Performance = (technical_correctness × 25 + skill_mastery × 20 + relevance × 15 + completeness × 5 + reasoning × 5) / 70",
+    "communication_performance": "Communication Performance = (clarity × 10 + structure × 8 + pace × 4 + pauses × 4 + filler_words × 4) / 30",
+    "overall_interview_score": "Overall Interview Score = (Technical Performance × 0.70) + (Communication Performance × 0.30)",
+    "score_range": "0 to 5",
+    "percentage_conversion": "Interview Percentage = (Overall Interview Score / 5) × 100"
+  },
+  "gap_classification": {
+    "knowledge_gap": {
+      "definition": "The student does not demonstrate sufficient understanding of the underlying concept or targeted skill.",
+      "signals": [
+        "incorrect concept",
+        "major technical misconception",
+        "cannot explain the basic principle",
+        "cannot answer a simpler follow-up",
+        "cannot apply the concept to a basic scenario"
+      ]
+    },
+    "performance_gap": {
+      "definition": "The student appears to have relevant knowledge or evidence but does not demonstrate it effectively during the interview.",
+      "signals": [
+        "technically correct but incomplete answer",
+        "difficulty explaining a known concept",
+        "poor answer structure",
+        "difficulty applying knowledge despite relevant evidence",
+        "resume or project evidence exists but interview demonstration is weak"
+      ]
+    },
+    "no_significant_gap": {
+      "definition": "The student demonstrates sufficient understanding of the targeted skill and communicates the answer effectively."
+    }
+  },
+  "adaptive_decision_rules": [
+    {
+      "condition": "score >= 4",
+      "action": "increase difficulty",
+      "reason": "Student demonstrates strong understanding."
+    },
+    {
+      "condition": "score == 3",
+      "action": "ask targeted clarification",
+      "reason": "Student demonstrates acceptable understanding but may need deeper verification."
+    },
+    {
+      "condition": "score <= 2",
+      "action": "decrease difficulty and test fundamentals",
+      "reason": "Student may have a knowledge gap."
+    },
+    {
+      "condition": "technical_score >= 4 AND communication_score <= 2",
+      "action": "ask communication-focused follow-up",
+      "reason": "Technical performance is stronger than verbal presentation."
+    },
+    {
+      "condition": "technical_score <= 2 AND resume_evidence_exists == true",
+      "action": "ask simpler targeted follow-up before classification",
+      "reason": "Relevant evidence exists but interview performance is weak. Additional evidence is required to distinguish a knowledge gap from a performance gap."
+    }
+  ],
+  "ai_interviewer_behavior": {
+    "question_source": "Questions must be selected from the approved interview question bank or generated only within the approved question schema and targeted skill constraints.",
+    "skill_targeting": "Questions must directly target the student's selected skill gaps from Module 2 and the requirements of the selected target role.",
+    "adaptive_behavior": [
+      "Start at an appropriate difficulty for the selected skill.",
+      "Increase difficulty after strong demonstrated performance.",
+      "Ask clarification or application questions after moderate performance.",
+      "Decrease difficulty and test fundamentals after weak performance.",
+      "Use targeted follow-ups instead of random unrelated questions.",
+      "Use previous answers to determine the next question.",
+      "Avoid repeating the same question unless verification is necessary.",
+      "Keep the interview within a configurable question/time limit."
+    ],
+    "communication_behavior": [
+      "Ask one clear question at a time.",
+      "Allow the student sufficient response time.",
+      "Do not penalize accent or regional pronunciation.",
+      "Do not infer emotion from facial appearance.",
+      "Do not infer confidence from facial expressions or voice.",
+      "Do not use camera appearance as an evaluation factor."
+    ],
+    "technical_behavior": [
+      "Evaluate technical correctness separately from communication quality.",
+      "Evaluate the skill selected by the student and relevant role requirements.",
+      "Use follow-up questions to verify shallow or unsupported answers.",
+      "Distinguish knowledge gaps from performance gaps using multiple signals."
+    ]
+  },
+  "interview_report_sections": [
+    "target_role",
+    "selected_skill_gaps",
+    "questions_attempted",
+    "question_wise_scores",
+    "technical_performance",
+    "communication_performance",
+    "skill_wise_scores",
+    "knowledge_gaps",
+    "performance_gaps",
+    "strong_areas",
+    "developing_areas",
+    "needs_immediate_attention",
+    "communication_feedback",
+    "recommended_learning",
+    "recommended_next_assessment",
+    "highest_impact_improvement",
+    "current_readiness",
+    "projected_readiness",
+    "overall_interview_score"
+  ],
+  "safety_and_fairness": [
+    "Do not infer emotion from facial appearance.",
+    "Do not claim to detect confidence from facial expressions.",
+    "Do not claim to detect confidence from voice.",
+    "Do not penalize accent or regional pronunciation.",
+    "Do not use camera-based appearance as an evaluation factor.",
+    "Do not treat pauses automatically as negative.",
+    "Do not equate speaking speed with intelligence.",
+    "Technical correctness must remain separate from communication quality.",
+    "Communication metrics must not override technical skill evaluation.",
+    "The final hiring decision must remain with the recruiter or authorized human."
+  ]
+}

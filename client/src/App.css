@@ -1,0 +1,385 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+/* =========================================================
+   SKILLBRIDGE - GLOBAL READABILITY FIX
+   ========================================================= */
+
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #101828 !important;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main text elements */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #101828 !important;
+}
+
+p {
+    color: #344054 !important;
+}
+
+span {
+    color: inherit;
+}
+
+strong,
+b {
+    color: #101828 !important;
+}
+
+/* Form elements */
+
+input,
+textarea,
+select {
+    color: #101828 !important;
+    background-color: #ffffff;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #667085 !important;
+    opacity: 1 !important;
+}
+
+/* Buttons */
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Links */
+
+a {
+    color: #1d4ed8;
+}
+
+/* =========================================================
+   SKILL GAP PAGE
+   ========================================================= */
+
+.skill-gap,
+.skill-gap-page,
+.skill-gap-container,
+.skill-gap-page * {
+    color: #101828;
+}
+
+.skill-gap-page p,
+.skill-gap-container p {
+    color: #344054 !important;
+}
+
+/* Skill cards */
+
+.skill-card,
+.skill-card strong,
+.skill-card span {
+    color: #101828 !important;
+}
+
+/* Skill type */
+
+.skill-type {
+    color: #475467 !important;
+}
+
+/* Matched / Missing headings */
+
+.matched-skills,
+.matched-skills h2,
+.matched-skills h3 {
+    color: #101828 !important;
+}
+
+.missing-skills,
+.missing-skills h2,
+.missing-skills h3 {
+    color: #101828 !important;
+}
+
+/* Coverage */
+
+.job-skill-coverage,
+.job-skill-coverage h2,
+.job-skill-coverage span {
+    color: #101828 !important;
+}
+
+/* =========================================================
+   DISABLE ACCIDENTAL FADED CONTENT
+   ========================================================= */
+
+.fade,
+.faded,
+.muted {
+    opacity: 1;
+}
+
+/* Don't let disabled-looking text become unreadable */
+
+button:disabled {
+    color: #475467;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+    color: #101828;
+}
+
+th {
+    font-weight: 800;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card,
+.panel,
+.section,
+.container {
+    color: #101828;
+}
+
+.card p,
+.panel p,
+.section p {
+    color: #344054;
+}
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+label {
+    color: #344054 !important;
+    font-weight: 600;
+}
+
+/* =========================================================
+   SMALL TEXT
+   ========================================================= */
+
+small {
+    color: #475467 !important;
+}
+
+/* =========================================================
+   PLACEHOLDERS
+   ========================================================= */
+
+::placeholder {
+    color: #667085 !important;
+    opacity: 1 !important;
+}

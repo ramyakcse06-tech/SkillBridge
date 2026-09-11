@@ -1,0 +1,471 @@
+{
+  "dataset": "SkillBridge Adaptive AI Interview Question Bank",
+  "version": "1.0",
+  "description": "Role- and skill-gap-driven interview questions for adaptive AI mock interviews. Questions are selected using target role, student skill gaps, evidence and previous performance.",
+  "adaptive_interview": {
+    "enabled": true,
+    "selection_inputs": [
+      "target_role",
+      "selected_skill_gaps",
+      "resume_evidence",
+      "previous_interview_performance",
+      "current_question_difficulty"
+    ],
+    "principle": "Do not select questions randomly. Prioritize the student's selected skill gaps and target-role requirements."
+  },
+  "questions": [
+    {
+      "id": "INT001",
+      "target_roles": [
+        "Java Backend Developer"
+      ],
+      "skill": "Java",
+      "subskill": "OOP",
+      "difficulty": "EASY",
+      "question_type": "technical",
+      "question": "Explain the four main principles of object-oriented programming and give a practical example of each.",
+      "expected_concepts": [
+        "encapsulation",
+        "inheritance",
+        "polymorphism",
+        "abstraction"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you apply encapsulation and abstraction when designing a backend service?",
+        "if_weak": "Can you explain encapsulation with a simple Java example?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "completeness",
+        "clarity"
+      ]
+    },
+    {
+      "id": "INT002",
+      "target_roles": [
+        "Java Backend Developer"
+      ],
+      "skill": "Java",
+      "subskill": "Collections",
+      "difficulty": "MEDIUM",
+      "question_type": "technical",
+      "question": "When would you choose ArrayList over LinkedList in Java?",
+      "expected_concepts": [
+        "random access",
+        "insertion/deletion",
+        "memory",
+        "performance"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "Suppose your application performs frequent random reads and occasional insertions. Which collection would you choose and why?",
+        "if_weak": "What is the main difference between ArrayList and LinkedList?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "reasoning",
+        "relevance"
+      ]
+    },
+    {
+      "id": "INT003",
+      "target_roles": [
+        "Java Backend Developer"
+      ],
+      "skill": "Spring Boot",
+      "subskill": "Dependency Injection",
+      "difficulty": "MEDIUM",
+      "question_type": "technical",
+      "question": "What is dependency injection in Spring Boot, and why is it useful?",
+      "expected_concepts": [
+        "dependency injection",
+        "IoC",
+        "loose coupling",
+        "Spring container"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "Compare constructor injection with field injection. Which would you prefer and why?",
+        "if_weak": "What problem does dependency injection solve?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "depth",
+        "completeness"
+      ]
+    },
+    {
+      "id": "INT004",
+      "target_roles": [
+        "Java Backend Developer"
+      ],
+      "skill": "Spring Boot",
+      "subskill": "REST API",
+      "difficulty": "MEDIUM",
+      "question_type": "scenario",
+      "question": "You are designing a REST API for a student placement application. How would you design an endpoint for retrieving a student's job-specific readiness score?",
+      "expected_concepts": [
+        "REST",
+        "HTTP GET",
+        "resource",
+        "endpoint",
+        "response",
+        "JSON"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you handle authentication and authorization for this endpoint?",
+        "if_weak": "What HTTP method would you use to retrieve the readiness score?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "practical_reasoning",
+        "relevance"
+      ]
+    },
+    {
+      "id": "INT005",
+      "target_roles": [
+        "Java Backend Developer"
+      ],
+      "skill": "SQL",
+      "subskill": "Joins",
+      "difficulty": "MEDIUM",
+      "question_type": "technical",
+      "question": "Explain the difference between INNER JOIN and LEFT JOIN with a placement-system example.",
+      "expected_concepts": [
+        "inner join",
+        "left join",
+        "matching rows",
+        "unmatched rows"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you find students who have no applications for any job?",
+        "if_weak": "Can you explain what happens to unmatched rows in a LEFT JOIN?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "reasoning",
+        "clarity"
+      ]
+    },
+    {
+      "id": "INT006",
+      "target_roles": [
+        "Python Developer"
+      ],
+      "skill": "Python",
+      "subskill": "Data Structures",
+      "difficulty": "EASY",
+      "question_type": "technical",
+      "question": "What is the difference between a list, tuple, set and dictionary in Python?",
+      "expected_concepts": [
+        "list",
+        "tuple",
+        "set",
+        "dictionary",
+        "mutability",
+        "key-value"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "Which structure would you use to remove duplicate values while preserving fast membership checking?",
+        "if_weak": "What is the main difference between a list and a tuple?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "completeness"
+      ]
+    },
+    {
+      "id": "INT007",
+      "target_roles": [
+        "Python Developer"
+      ],
+      "skill": "Python",
+      "subskill": "Functions",
+      "difficulty": "EASY",
+      "question_type": "technical",
+      "question": "Explain positional arguments, keyword arguments, *args and **kwargs in Python.",
+      "expected_concepts": [
+        "positional arguments",
+        "keyword arguments",
+        "args",
+        "kwargs"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "Give an example where **kwargs would be useful in a backend application.",
+        "if_weak": "What does *args allow a function to accept?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "clarity"
+      ]
+    },
+    {
+      "id": "INT008",
+      "target_roles": [
+        "Python Developer"
+      ],
+      "skill": "Python",
+      "subskill": "Exception Handling",
+      "difficulty": "MEDIUM",
+      "question_type": "scenario",
+      "question": "Your backend calls an external service and that service sometimes fails. How would you handle the failure in Python?",
+      "expected_concepts": [
+        "try",
+        "except",
+        "specific exceptions",
+        "logging",
+        "retry",
+        "fallback"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you prevent an unlimited retry loop?",
+        "if_weak": "What Python construct would you use to catch an exception?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "practical_reasoning"
+      ]
+    },
+    {
+      "id": "INT009",
+      "target_roles": [
+        "Python Developer"
+      ],
+      "skill": "FastAPI",
+      "subskill": "REST API",
+      "difficulty": "MEDIUM",
+      "question_type": "technical",
+      "question": "What are the advantages of using FastAPI for building a REST API?",
+      "expected_concepts": [
+        "API",
+        "type hints",
+        "validation",
+        "automatic documentation",
+        "async"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you validate a request body in FastAPI?",
+        "if_weak": "What is the purpose of type hints in FastAPI?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "depth"
+      ]
+    },
+    {
+      "id": "INT010",
+      "target_roles": [
+        "Frontend Developer"
+      ],
+      "skill": "JavaScript",
+      "subskill": "Async Programming",
+      "difficulty": "MEDIUM",
+      "question_type": "technical",
+      "question": "Explain the difference between synchronous and asynchronous execution in JavaScript.",
+      "expected_concepts": [
+        "synchronous",
+        "asynchronous",
+        "event loop",
+        "callbacks",
+        "promises"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "Explain how async/await works with a network request.",
+        "if_weak": "Why would asynchronous execution be useful when fetching data from an API?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "clarity",
+        "completeness"
+      ]
+    },
+    {
+      "id": "INT011",
+      "target_roles": [
+        "Frontend Developer"
+      ],
+      "skill": "JavaScript",
+      "subskill": "Promises",
+      "difficulty": "MEDIUM",
+      "question_type": "technical",
+      "question": "What is a Promise in JavaScript and what are its possible states?",
+      "expected_concepts": [
+        "pending",
+        "fulfilled",
+        "rejected"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you handle an API failure using a Promise?",
+        "if_weak": "What are the three states of a Promise?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "completeness"
+      ]
+    },
+    {
+      "id": "INT012",
+      "target_roles": [
+        "Frontend Developer"
+      ],
+      "skill": "React",
+      "subskill": "Components",
+      "difficulty": "EASY",
+      "question_type": "technical",
+      "question": "What is a React component and why are components useful?",
+      "expected_concepts": [
+        "component",
+        "reusability",
+        "props",
+        "state"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you divide a placement dashboard into reusable React components?",
+        "if_weak": "What is the purpose of a React component?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "practical_reasoning"
+      ]
+    },
+    {
+      "id": "INT013",
+      "target_roles": [
+        "Frontend Developer"
+      ],
+      "skill": "React",
+      "subskill": "State Management",
+      "difficulty": "MEDIUM",
+      "question_type": "scenario",
+      "question": "A dashboard displays a student's readiness score and updates after an assessment. How would you manage that changing data in React?",
+      "expected_concepts": [
+        "state",
+        "useState",
+        "API request",
+        "rerender"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "When would you consider using a global state-management solution?",
+        "if_weak": "What causes a React component to re-render when its state changes?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "INT014",
+      "target_roles": [
+        "Java Backend Developer",
+        "Python Developer",
+        "Frontend Developer"
+      ],
+      "skill": "Database",
+      "subskill": "Database Design",
+      "difficulty": "MEDIUM",
+      "question_type": "scenario",
+      "question": "Suppose a placement system stores students, jobs and applications. How would you design the relationship between these entities?",
+      "expected_concepts": [
+        "student",
+        "job",
+        "application",
+        "one-to-many",
+        "many-to-many"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you prevent duplicate applications for the same job?",
+        "if_weak": "What entity would connect students and jobs?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "data_modeling",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "INT015",
+      "target_roles": [
+        "Java Backend Developer",
+        "Python Developer",
+        "Frontend Developer"
+      ],
+      "skill": "Git",
+      "subskill": "Version Control",
+      "difficulty": "EASY",
+      "question_type": "technical",
+      "question": "Why is Git useful in a software development project?",
+      "expected_concepts": [
+        "version control",
+        "branches",
+        "commits",
+        "collaboration"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "Describe how you would use a feature branch when developing a new assessment feature.",
+        "if_weak": "What is the purpose of a Git commit?"
+      },
+      "evaluation_focus": [
+        "technical_correctness",
+        "clarity"
+      ]
+    },
+    {
+      "id": "INT016",
+      "target_roles": [
+        "Java Backend Developer",
+        "Python Developer",
+        "Frontend Developer"
+      ],
+      "skill": "Problem Solving",
+      "subskill": "Debugging",
+      "difficulty": "MEDIUM",
+      "question_type": "scenario",
+      "question": "A feature works correctly on your machine but fails after deployment. Explain how you would systematically investigate the problem.",
+      "expected_concepts": [
+        "logs",
+        "environment",
+        "configuration",
+        "reproduce",
+        "isolation",
+        "deployment"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "How would you determine whether the problem is caused by the application or the deployment environment?",
+        "if_weak": "What would you check first when debugging a deployment failure?"
+      },
+      "evaluation_focus": [
+        "problem_solving",
+        "reasoning",
+        "communication"
+      ]
+    },
+    {
+      "id": "INT017",
+      "target_roles": [
+        "Java Backend Developer",
+        "Python Developer",
+        "Frontend Developer"
+      ],
+      "skill": "Communication",
+      "subskill": "Technical Explanation",
+      "difficulty": "EASY",
+      "question_type": "communication",
+      "question": "Explain a technical project you have worked on to a person who does not have a programming background.",
+      "expected_concepts": [
+        "structured explanation",
+        "purpose",
+        "problem",
+        "solution",
+        "outcome"
+      ],
+      "adaptive_follow_up": {
+        "if_strong": "Now explain the same project to a senior software engineer and include the technical architecture.",
+        "if_weak": "Can you explain the main purpose of your project in simple terms?"
+      },
+      "evaluation_focus": [
+        "clarity",
+        "structure",
+        "audience_adaptation"
+      ]
+    }
+  ]
+}

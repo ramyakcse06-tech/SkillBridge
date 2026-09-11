@@ -1,0 +1,34 @@
+{
+  "dataset": "TACO",
+  "validation_stage": "EXECUTION_HARNESS_STRUCTURAL",
+  "validation_timestamp": "2026-09-08T00:04:02.087193",
+  "source_file": "assessment_ready_coding_problems.json",
+  "total_loaded": 3333,
+  "execution_harness_ready": 3333,
+  "rejected": 0,
+  "execution_formats": {
+    "stdin_stdout": 3333
+  },
+  "rejection_reasons": {},
+  "difficulty_distribution": {
+    "HARD": 554,
+    "VERY_HARD": 446,
+    "UNKNOWN_DIFFICULTY": 538,
+    "EASY": 851,
+    "MEDIUM_HARD": 440,
+    "MEDIUM": 504
+  },
+  "source_distribution": {
+    "codeforces": 1450,
+    "aizu": 225,
+    "geeksforgeeks": 276,
+    "kattis": 137,
+    "codechef": 653,
+    "hackerearth": 295,
+    "atcoder": 152,
+    "hackerrank": 145
+  },
+  "student_solution_exposure": false,
+  "reference_solution_policy": "SERVER_ONLY",
+  "important_note": "This validation verifies dataset and execution-harness compatibility. It does not execute student code or claim that every problem has been smoke-tested against a reference implementation."
+}

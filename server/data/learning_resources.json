@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "skill": "computer programming",
+    "aliases": ["programming", "coding"],
+    "title": "Programming Fundamentals",
+    "type": "Course",
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://www.freecodecamp.org/learn/"
+  },
+  {
+    "id": 2,
+    "skill": "Python (computer programming)",
+    "aliases": ["python"],
+    "title": "Python Programming",
+    "type": "Course",
+    "difficulty": "Beginner",
+    "estimated_hours": 10,
+    "url": "https://www.freecodecamp.org/learn/scientific-computing-with-python/"
+  },
+  {
+    "id": 3,
+    "skill": "Java (computer programming)",
+    "aliases": ["java"],
+    "title": "Java Programming",
+    "type": "Course",
+    "difficulty": "Beginner",
+    "estimated_hours": 10,
+    "url": "https://dev.java/learn/"
+  },
+  {
+    "id": 4,
+    "skill": "JavaScript",
+    "aliases": ["javascript", "js"],
+    "title": "JavaScript Fundamentals",
+    "type": "Course",
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+    "id": 5,
+    "skill": "SQL",
+    "aliases": ["sql", "structured query language"],
+    "title": "SQL Fundamentals",
+    "type": "Tutorial",
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://www.w3schools.com/sql/"
+  },
+  {
+    "id": 6,
+    "skill": "use object-oriented programming",
+    "aliases": ["object oriented programming", "oop"],
+    "title": "Object-Oriented Programming",
+    "type": "Course",
+    "difficulty": "Intermediate",
+    "estimated_hours": 8,
+    "url": "https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/"
+  },
+  {
+    "id": 7,
+    "skill": "data structures",
+    "aliases": ["data structures"],
+    "title": "Data Structures",
+    "type": "Course",
+    "difficulty": "Intermediate",
+    "estimated_hours": 12,
+    "url": "https://www.geeksforgeeks.org/data-structures/"
+  },
+  {
+    "id": 8,
+    "skill": "algorithms",
+    "aliases": ["algorithms", "algorithm design"],
+    "title": "Algorithms",
+    "type": "Course",
+    "difficulty": "Intermediate",
+    "estimated_hours": 12,
+    "url": "https://www.geeksforgeeks.org/fundamentals-of-algorithms/"
+  },
+  {
+    "id": 9,
+    "skill": "debug software",
+    "aliases": ["debugging", "software debugging"],
+    "title": "Software Debugging",
+    "type": "Tutorial",
+    "difficulty": "Intermediate",
+    "estimated_hours": 4,
+    "url": "https://developer.mozilla.org/en-US/docs/Learn"
+  },
+  {
+    "id": 10,
+    "skill": "use software libraries",
+    "aliases": ["software libraries", "libraries"],
+    "title": "Working with Software Libraries",
+    "type": "Tutorial",
+    "difficulty": "Intermediate",
+    "estimated_hours": 4,
+    "url": "https://developer.mozilla.org/en-US/docs/Learn"
+  },
+  {
+    "id": 11,
+    "skill": "web services",
+    "aliases": ["web services", "apis", "rest api"],
+    "title": "Web Services and REST APIs",
+    "type": "Course",
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side"
+  },
+  {
+    "id": 12,
+    "skill": "integrated development environment software",
+    "aliases": ["ide", "integrated development environment"],
+    "title": "Integrated Development Environments",
+    "type": "Tutorial",
+    "difficulty": "Beginner",
+    "estimated_hours": 2,
+    "url": "https://code.visualstudio.com/docs"
+  },
+  {
+    "id": 13,
+    "skill": "tools for software configuration management",
+    "aliases": ["git", "version control", "configuration management"],
+    "title": "Git and Version Control",
+    "type": "Course",
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": "https://git-scm.com/doc"
+  },
+  {
+    "id": 14,
+    "skill": "use query languages",
+    "aliases": ["query languages", "sql"],
+    "title": "Query Languages and SQL",
+    "type": "Tutorial",
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": "https://www.w3schools.com/sql/"
+  },
+  {
+    "id": 15,
+    "skill": "utilise machine learning",
+    "aliases": ["machine learning", "ml"],
+    "title": "Machine Learning Fundamentals",
+    "type": "Course",
+    "difficulty": "Intermediate",
+    "estimated_hours": 12,
+    "url": "https://developers.google.com/machine-learning/crash-course"
+  },
+  {
+    "id": 16,
+    "skill": "design user interface",
+    "aliases": ["user interface", "ui design"],
+    "title": "User Interface Design",
+    "type": "Course",
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://developer.mozilla.org/en-US/docs/Learn"
+  }
+]

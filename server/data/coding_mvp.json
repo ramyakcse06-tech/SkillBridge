@@ -1,0 +1,460 @@
+{
+  "dataset": "TACO",
+  "purpose": "SkillBridge Coding Assessment MVP",
+  "problem_count": 30,
+  "student_solution_exposure": false,
+  "reference_solution_policy": "SERVER_ONLY",
+  "execution_format": "stdin_stdout",
+  "problems": [
+    {
+      "id": "taco_01373",
+      "question": "Sorting is useful as the first step in many different tasks. The most common task is to make finding things easier, but there are other uses as well.  In this case, it will make it easier to determine which pair or pairs of elements have the smallest absolute difference between them.\n\nExample \n\n$arr=[5,2,3,4,1]$   \n\nSorted, $ar r'=[1,2,3,4,5]$.  Several pairs have the minimum difference of $1$: $[(1,2),(2,3),(3,4),(4,5)]$.  Return the array $[1,2,2,3,3,4,4,5]$.\n\nNote \n\nAs shown in the example, pairs may overlap.  \n\nGiven a list of unsorted integers, $\\textbf{arr}$, find the pair of elements that have the smallest absolute difference between them. If there are multiple pairs, find them all.\n\nFunction Description  \n\nComplete the closestNumbers function in the editor below.   \n\nclosestNumbers has the following parameter(s):  \n\nint arr[n]: an array of integers   \n\nReturns \n\n- int[]: an array of integers as described   \n\nInput Format\n\nThe first line contains a single integer $n$, the length of $\\textbf{arr}$. \n\nThe second line contains $n$ space-separated integers, $arr\\left[i\\right]$.\n\nConstraints\n\n$2\\leq n\\leq200000$\n$-10^7\\leq arr[i]\\leq10^7$\nAll $a[i]$ are unique in $\\textbf{arr}$.\n\nOutput Format\n\nSample Input 0\n\n10\n-20 -3916237 -357920 -3620601 7374819 -7330761 30 6246457 -6461594 266854 \n\nSample Output 0\n\n-20 30\n\nExplanation 0 \n\n(30) - (-20) = 50, which is the smallest difference.  \n\nSample Input 1\n\n12\n-20 -3916237 -357920 -3620601 7374819 -7330761 30 6246457 -6461594 266854 -520 -470 \n\nSample Output 1\n\n-520 -470 -20 30\n\nExplanation 1 \n\n(-470) - (-520) = 30 - (-20) = 50, which is the smallest difference. \n\nSample Input 2\n\n4\n5 4 3 2\n\nSample Output 2\n\n2 3 3 4 4 5\n\nExplanation 2 \n\nHere, the minimum difference is 1. Valid pairs are (2, 3), (3, 4), and (4, 5).",
+      "difficulty": "EASY",
+      "name": null,
+      "source": "hackerrank",
+      "url": "https://www.hackerrank.com/challenges/closest-numbers/problem",
+      "tags": [
+        "['Sorting']"
+      ],
+      "skill_types": [
+        "['Sorting']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_00453",
+      "question": "The letters shop showcase is a string s, consisting of n lowercase Latin letters. As the name tells, letters are sold in the shop.\n\nLetters are sold one by one from the leftmost to the rightmost. Any customer can only buy some prefix of letters from the string s.\n\nThere are m friends, the i-th of them is named t_i. Each of them is planning to estimate the following value: how many letters (the length of the shortest prefix) would s/he need to buy if s/he wanted to construct her/his name of bought letters. The name can be constructed if each letter is presented in the equal or greater amount.\n\n  * For example, for s=\"arrayhead\" and t_i=\"arya\" 5 letters have to be bought (\"arrayhead\"). \n  * For example, for s=\"arrayhead\" and t_i=\"harry\" 6 letters have to be bought (\"arrayhead\"). \n  * For example, for s=\"arrayhead\" and t_i=\"ray\" 5 letters have to be bought (\"arrayhead\"). \n  * For example, for s=\"arrayhead\" and t_i=\"r\" 2 letters have to be bought (\"arrayhead\"). \n  * For example, for s=\"arrayhead\" and t_i=\"areahydra\" all 9 letters have to be bought (\"arrayhead\"). \n\n\n\nIt is guaranteed that every friend can construct her/his name using the letters from the string s.\n\nNote that the values for friends are independent, friends are only estimating them but not actually buying the letters.\n\nInput\n\nThe first line contains one integer n (1 ≤ n ≤ 2 ⋅ 10^5) — the length of showcase string s.\n\nThe second line contains string s, consisting of exactly n lowercase Latin letters.\n\nThe third line contains one integer m (1 ≤ m ≤ 5 ⋅ 10^4) — the number of friends.\n\nThe i-th of the next m lines contains t_i (1 ≤ |t_i| ≤ 2 ⋅ 10^5) — the name of the i-th friend.\n\nIt is guaranteed that ∑ _{i=1}^m |t_i| ≤ 2 ⋅ 10^5.\n\nOutput\n\nFor each friend print the length of the shortest prefix of letters from s s/he would need to buy to be able to construct her/his name of them. The name can be constructed if each letter is presented in the equal or greater amount.\n\nIt is guaranteed that every friend can construct her/his name using the letters from the string s.\n\nExample\n\nInput\n\n\n9\narrayhead\n5\narya\nharry\nray\nr\nareahydra\n\n\nOutput\n\n\n5\n6\n5\n2\n9",
+      "difficulty": "EASY",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1187/B",
+      "tags": [
+        "['String algorithms', 'Sorting', 'Implementation']"
+      ],
+      "skill_types": [
+        "['Sorting']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_00527",
+      "question": "A necklace can be described as a string of links ('-') and pearls ('o'), with the last link or pearl connected to the first one. $0$ \n\nYou can remove a link or a pearl and insert it between two other existing links or pearls (or between a link and a pearl) on the necklace. This process can be repeated as many times as you like, but you can't throw away any parts.\n\nCan you make the number of links between every two adjacent pearls equal? Two pearls are considered to be adjacent if there is no other pearl between them.\n\nNote that the final necklace should remain as one circular part of the same length as the initial necklace.\n\n\n-----Input-----\n\nThe only line of input contains a string $s$ ($3 \\leq |s| \\leq 100$), representing the necklace, where a dash '-' represents a link and the lowercase English letter 'o' represents a pearl.\n\n\n-----Output-----\n\nPrint \"YES\" if the links and pearls can be rejoined such that the number of links between adjacent pearls is equal. Otherwise print \"NO\".\n\nYou can print each letter in any case (upper or lower).\n\n\n-----Examples-----\nInput\n-o-o--\nOutput\nYES\nInput\n-o---\n\nOutput\nYES\nInput\n-o---o-\n\nOutput\nNO\nInput\nooo\n\nOutput\nYES",
+      "difficulty": "EASY",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/980/A",
+      "tags": [
+        "['Mathematics', 'Implementation']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_00409",
+      "question": "Given an array arr[] of N integers, the task is to find a subsequence of size K whose product is maximum among all possible K sized subsequences of a given array.\nExample 1:\nInput: N = 4, K = 2\narr[] = {1, 2, 0, 3} \nOutput: 6\nExplanation: Subsequence containing \nelements {2, 3} gives maximum product: \n2*3 = 6\nExample 2:\nInput: N = 6, K = 4\narr[] = {1, 2, -1, -3, -6, 4}\nOutput: 144\nExplanation: Subsequence containing \n{2, -3, -6, 4} gives maximum product: \n2*(-3)*(-6)*4 = 144\nYour Task:\nThis is a function problem. You don't need to take any input, as it is already accomplished by the driver code. You just need to complete the function maxProductSubarrayOfSizeK() that takes array arr[], integer N and integer K as parameters and returns the desired product.\n \nExpected Time Complexity: O(NlogN).\nExpected Auxiliary Space: O(1).\n \nConstraints:\n1 ≤ N ≤ 10^{5}",
+      "difficulty": "EASY",
+      "name": null,
+      "source": "geeksforgeeks",
+      "url": "https://practice.geeksforgeeks.org/problems/maximum-product4633/1",
+      "tags": [
+        "['Data structures']"
+      ],
+      "skill_types": [
+        "['Data structures']"
+      ],
+      "starter_code": "class Solution:\n    def maxProductSubarrayOfSizeK(self,arr, n, k):\n        # Your code goes here"
+    },
+    {
+      "id": "taco_03725",
+      "question": "After a hard day Vitaly got very hungry and he wants to eat his favorite potato pie. But it's not that simple. Vitaly is in the first room of the house with n room located in a line and numbered starting from one from left to right. You can go from the first room to the second room, from the second room to the third room and so on — you can go from the (n - 1)-th room to the n-th room. Thus, you can go to room x only from room x - 1.\n\nThe potato pie is located in the n-th room and Vitaly needs to go there. \n\nEach pair of consecutive rooms has a door between them. In order to go to room x from room x - 1, you need to open the door between the rooms with the corresponding key. \n\nIn total the house has several types of doors (represented by uppercase Latin letters) and several types of keys (represented by lowercase Latin letters). The key of type t can open the door of type T if and only if t and T are the same letter, written in different cases. For example, key f can open door F.\n\nEach of the first n - 1 rooms contains exactly one key of some type that Vitaly can use to get to next rooms. Once the door is open with some key, Vitaly won't get the key from the keyhole but he will immediately run into the next room. In other words, each key can open no more than one door.\n\nVitaly realizes that he may end up in some room without the key that opens the door to the next room. Before the start his run for the potato pie Vitaly can buy any number of keys of any type that is guaranteed to get to room n.\n\nGiven the plan of the house, Vitaly wants to know what is the minimum number of keys he needs to buy to surely get to the room n, which has a delicious potato pie. Write a program that will help Vitaly find out this number.\n\n\n-----Input-----\n\nThe first line of the input contains a positive integer n (2 ≤ n ≤ 10^5) — the number of rooms in the house.\n\nThe second line of the input contains string s of length 2·n - 2. Let's number the elements of the string from left to right, starting from one. \n\nThe odd positions in the given string s contain lowercase Latin letters — the types of the keys that lie in the corresponding rooms. Thus, each odd position i of the given string s contains a lowercase Latin letter — the type of the key that lies in room number (i + 1) / 2.\n\nThe even positions in the given string contain uppercase Latin letters — the types of doors between the rooms. Thus, each even position i of the given string s contains an uppercase letter — the type of the door that leads from room i / 2 to room i / 2 + 1.\n\n\n-----Output-----\n\nPrint the only integer — the minimum number of keys that Vitaly needs to buy to surely get from room one to room n.\n\n\n-----Examples-----\nInput\n3\naAbB\n\nOutput\n0\n\nInput\n4\naBaCaB\n\nOutput\n3\n\nInput\n5\nxYyXzZaZ\n\nOutput\n2",
+      "difficulty": "EASY",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/525/A",
+      "tags": [
+        "['String algorithms', 'Greedy algorithms']"
+      ],
+      "skill_types": [
+        "['Greedy algorithms']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03177",
+      "question": "Amr loves Geometry. One day he came up with a very interesting problem.\n\nAmr has a circle of radius r and center in point (x, y). He wants the circle center to be in new position (x', y').\n\nIn one step Amr can put a pin to the border of the circle in a certain point, then rotate the circle around that pin by any angle and finally remove the pin.\n\nHelp Amr to achieve his goal in minimum number of steps.\n\n\n-----Input-----\n\nInput consists of 5 space-separated integers r, x, y, x' y' (1 ≤ r ≤ 10^5,  - 10^5 ≤ x, y, x', y' ≤ 10^5), circle radius, coordinates of original center of the circle and coordinates of destination center of the circle respectively.\n\n\n-----Output-----\n\nOutput a single integer — minimum number of steps required to move the center of the circle to the destination point.\n\n\n-----Examples-----\nInput\n2 0 0 0 4\n\nOutput\n1\n\nInput\n1 1 1 4 4\n\nOutput\n3\n\nInput\n4 5 6 5 6\n\nOutput\n0\n\n\n\n-----Note-----\n\nIn the first sample test the optimal way is to put a pin at point (0, 2) and rotate the circle by 180 degrees counter-clockwise (or clockwise, no matter).\n\n[Image]",
+      "difficulty": "MEDIUM",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/507/B",
+      "tags": [
+        "['Geometry', 'Mathematics']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03475",
+      "question": "Read problems statements in [Hindi], [Mandarin Chinese], [Russian], [Vietnamese], and [Bengali] as well.\n\nYou are playing EVE Online. Initially, you have one dollar, but you have somehow acquired two cheat codes. The first cheat code multiplies the amount of money you own by $10$, while the second one multiplies it by $20$. The cheat codes can be used any number of times.\n\nYou want to have exactly $N$ dollars. Now you are wondering: can you achieve that by only using some sequence of cheat codes?\n\n------  Input ------\nThe first line of the input contains a single integer $T$ denoting the number of test cases. The description of $T$ test cases follows.\nThe first and only line of each test case contains a single integer $N$.\n\n------  Output ------\nFor each test case, print a single line containing the string \"Yes\" if you can make exactly $N$ dollars or \"No\" otherwise.\n\n------  Constraints  ------\n$1 ≤ T ≤ 100$\n$1 ≤ N ≤ 10^{18}$\n\n----- Sample Input 1 ------ \n4\n\n200\n\n90\n\n1000000000000\n\n1024000000000\n----- Sample Output 1 ------ \nYes\n\nNo\n\nYes\n\nNo",
+      "difficulty": "MEDIUM",
+      "name": null,
+      "source": "codechef",
+      "url": "https://www.codechef.com/problems/CKWLK",
+      "tags": [
+        "['Number theory', 'Mathematics']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_00673",
+      "question": "You are given an integer, $N$. Write a program to determine if $N$ is an element of the Fibonacci sequence.  \n\nThe first few elements of the Fibonacci sequence are $0,1,1,2,3,5,8,13,\\cdots$. A Fibonacci sequence is one where every element is a sum of the previous two elements in the sequence. The first two elements are ${0}$ and ${1}$. \n\nFormally: \n\n$\\begin{aligned}&\\textit{fib}_0=0\\\\ &\\textit{fib}_1=1\\\\ &\\vdots\\\\ &\\textit{fib}_n=fib_{n-1}+fib_{n-2}\\forall n>1\\end{aligned}$\n\nFunction Description   \n\nComplete the isFibo function in the editor below.   \n\nisFibo has the following parameters: \n\n- int n: the number to check   \n\nReturns \n\n- string: either IsFibo or IsNotFibo\n\nInput Format \n\nThe first line contains ${t}}$, number of test cases. \n\n${t}}$ lines follow. Each line contains an integer $n$.\n\nConstraints \n\n$1\\leq t\\leq10^5$ \n\n$1\\leq n\\leq10^{10}$\n\nSample Input  \n\nSTDIN   Function\n-----   --------\n3       t = 3\n5       n = 5\n7       n = 7\n8       n = 8\n\nSample Output  \n\nIsFibo\nIsNotFibo\nIsFibo\n\nExplanation \n\n$5$ is a Fibonacci number given by ${fib}_5=3+2$ \n\n$7$ is not a Fibonacci number \n\n$8$ is a Fibonacci number given by ${fib}_6=5+3$  \n\nTime Limit \n\nThe time limit for this challenge is given here.",
+      "difficulty": "MEDIUM",
+      "name": null,
+      "source": "hackerrank",
+      "url": "https://www.hackerrank.com/challenges/is-fibo/problem",
+      "tags": [
+        "['Mathematics']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02084",
+      "question": "Given a string str of length N, you have to find number of palindromic subsequence (need not necessarily be distinct) present in the string str.\nNote: You have to return the answer module 10^{9}+7;\n \nExample 1:\nInput: \nStr = \"abcd\"\nOutput: \n4\nExplanation:\npalindromic subsequence are : \"a\" ,\"b\", \"c\" ,\"d\"\n \nExample 2:\nInput: \nStr = \"aab\"\nOutput: \n4\nExplanation:\npalindromic subsequence are :\"a\", \"a\", \"b\", \"aa\"\n \nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function countPs() which takes a string str as input parameter and returns the number of palindromic subsequence.\n \nExpected Time Complexity: O(N*N)\nExpected Auxiliary Space: O(N*N)\nConstraints:\n1<=length of string str <=1000",
+      "difficulty": "MEDIUM",
+      "name": null,
+      "source": "geeksforgeeks",
+      "url": "https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1",
+      "tags": [
+        "['Dynamic programming']"
+      ],
+      "skill_types": [
+        "['Dynamic programming']"
+      ],
+      "starter_code": "class Solution:\n\n    # Your task is to complete this function\n\n    # Function should return an integer\n\n    def countPS(self,string):\n\n        # Code here"
+    },
+    {
+      "id": "taco_03648",
+      "question": "We call a sequence of $n$ non-negative integers, ${A}$, awesome if there exists some positive integer $x>1$ such that each element $a_i$ in ${A}$ (where $0\\leq i<n$) is evenly divisible by ${x}$. Recall that ${a}$ evenly divides ${b}$ if there exists some integer ${c}$ such that $b=a\\cdot c$.\n\nGiven an awesome sequence, ${A}$, and a positive integer, ${k}$, find and print the maximum integer, ${l}$, satisfying the following conditions:\n\n$0\\leq l\\leq k$\n$A\\cup\\{l\\}$ is also awesome.\n\nInput Format\n\nThe first line contains two space-separated positive integers, $n$ (the length of sequence ${A}$) and ${k}$ (the upper bound on answer ${l}$), respectively. \n\nThe second line contains $n$ space-separated positive integers describing the respective elements in sequence ${A}$ (i.e., $a_0,a_1,\\ldots,a_{n-1}$).\n\nConstraints\n\n$1\\leq n\\leq10^5$\n$1\\leq k\\leq10^9$\n$1\\leq a_i\\leq10^9$\n\nOutput Format\n\nPrint a single, non-negative integer denoting the value of ${l}$ (i.e., the maximum integer $\\leq k$ such that $A\\cup\\{l\\}$ is awesome). As ${0}$ is evenly divisible by any $x>1$, the answer will always exist. \n\nSample Input 0\n\n3 5\n2 6 4\n\nSample Output 0\n\n4\n\nExplanation 0       \n\nThe only common positive divisor of $2$, ${6}$, and ${4}$ that is ${>1}$ is $2$, and we need to find ${l}$ such that $0\\leq l\\leq5$. We know $l\\neq5$ because $x=2$ would not evenly divide $5$. When we look at the next possible value, $l=4$, we find that this is valid because it's evenly divisible by our ${x}$ value. Thus, we print ${4}$.\n\nSample Input 1\n\n1 5\n7\n\nSample Output 1\n\n0\n\nExplanation 1   \n\nBeing prime, $7$ is the only possible value of $x>1$. The only possible ${l}$ such that $0\\leq l\\leq5$ is ${0}$ (recall that $\\frac{0}{7}=0$), so we print ${0}$ as our answer.",
+      "difficulty": "MEDIUM",
+      "name": null,
+      "source": "hackerrank",
+      "url": "https://www.hackerrank.com/challenges/easy-gcd-1/problem",
+      "tags": [
+        "['Number theory']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_01930",
+      "question": "Little penguin Polo likes permutations. But most of all he likes permutations of integers from 0 to n, inclusive.\n\nFor permutation p = p_0, p_1, ..., p_{n}, Polo has defined its beauty — number $(0 \\oplus p_{0}) +(1 \\oplus p_{1}) + \\cdots +(n \\oplus p_{n})$.\n\nExpression $x \\oplus y$ means applying the operation of bitwise excluding \"OR\" to numbers x and y. This operation exists in all modern programming languages, for example, in language C++ and Java it is represented as \"^\" and in Pascal — as \"xor\".\n\nHelp him find among all permutations of integers from 0 to n the permutation with the maximum beauty.\n\n\n-----Input-----\n\nThe single line contains a positive integer n (1 ≤ n ≤ 10^6).\n\n\n-----Output-----\n\nIn the first line print integer m the maximum possible beauty. In the second line print any permutation of integers from 0 to n with the beauty equal to m.\n\nIf there are several suitable permutations, you are allowed to print any of them.\n\n\n-----Examples-----\nInput\n4\n\nOutput\n20\n0 2 1 4 3",
+      "difficulty": "MEDIUM_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/288/C",
+      "tags": [
+        "['Mathematics', 'Implementation']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02439",
+      "question": "HackerLand is a country with $n$ beautiful cities and $m$ undirected roads. Like every other beautiful country, HackerLand has traffic jams.\n\nEach road has a crowd value. The crowd value of a path is defined as the maximum crowd value for all roads in the path. For example, if the crowd values for all roads are $[1,4,5,6,3]$, then the crowd value for the path will be $max(1,4,5,6,3)=6$.\n\nEach city $\\boldsymbol{i}$ has a type value, $T_i$, denoting the type of buildings in the city.\n\nDavid just started his vacation in HackerLand. He wants to travel from city $\\boldsymbol{x}$ to city $y$. He also wants to see at least $\\boldsymbol{\\mbox{k}}$ different types of buildings along the path from $\\boldsymbol{x}$ to $y$. When choosing a path from city $\\boldsymbol{x}$ to city $y$ that has at least $\\boldsymbol{\\mbox{k}}$ different types of buildings along the path, David always selects the one with the minimum crowd value.\n\nYou will be given $\\textit{q}$ queries. Each query takes the form of $3$ space-separated integers, $x_i$, $y_i$, and $k_i$, denoting the respective values for starting city, destination city, and minimum number of unique buildings that David wants to see along the way. For each query, you must print the minimum crowd value for a path between $x_i$ and $y_i$ that has at least $k_i$ different buildings along the route. If there is no such path, print -1.\n\nNote: A path may contain cycles (i.e., the same roads or cities may be traveled more than once).\n\nInput Format\n\nThe first line contains $3$ space-separated integers denoting the respective values for $n$ (the number of cities), $m$ (the number of roads), and $\\textit{q}$ (the number of queries).\n\nThe second line contains $n$ space-separated integers describing the respective building type for each city in array $\\mathbf{T}$ (where the $\\boldsymbol{i}$-th value is $T_i$ and $1\\leq i\\leq n$).   \n \nEach of the $m$ subsequent lines defines a road in the form of $3$ space-separated integers, $x_i$, $y_i$, and $u_i$, defining an undirected road with crowd value $u_i$ that connects cities $x_i$ and $y_i$. \n\nEach of the $\\textit{q}$ subsequent lines defines a query in the form of $3$ space-separated integers, $x_j$, $y_j$, and $k_j$ (where $0\\leq j<q$), respectively. \n\nConstraints\n\n$1\\leq n,m,q\\leq10^5$\n$1\\leq T_i,u_i\\leq10^9$\n$1\\leq x_j,y_j,k_j\\leq n$\nEach road connect $2$ distinct cities, meaning no road starts and ends in the same city.\n\nOutput Format\n\nFor each query, print its answer on a new line.\n\nSample Input\n7 6 1\n1 1 4 5 1 3 2\n1 2 3\n2 6 2\n2 3 4\n3 4 3\n2 4 9\n5 7 9\n1 2 4\n\nSample Output\n4\n\nExplanation\n\nThe diagram below depicts the country given as Sample Input. Different values of $T_i$ are shown in different colors.\n\nThe path for the last query (1 2 4) will be $1\\to2\\to3\\to4\\to3\\to2\\to6\\to2$. David sees his first type of building in cities $1$ and $2$, his second type of building in city $3$, his third type of building in city $\\begin{array}{c}4\\end{array}$, and his fourth type of building in city $\\boldsymbol{6}$. The crowd values for each road traveled on this path are $[3,4,3,3,4,2,2]$; the maximum of these values is $\\begin{array}{c}4\\end{array}$. Thus, we print $\\begin{array}{c}4\\end{array}$ on a new line.",
+      "difficulty": "MEDIUM_HARD",
+      "name": null,
+      "source": "hackerrank",
+      "url": "https://www.hackerrank.com/challenges/travel-in-hackerland/problem",
+      "tags": [
+        "['Graph algorithms']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03771",
+      "question": "Hilbert's Hotel is a very unusual hotel since the number of rooms is infinite! In fact, there is exactly one room for every integer, including zero and negative integers. Even stranger, the hotel is currently at full capacity, meaning there is exactly one guest in every room. The hotel's manager, David Hilbert himself, decides he wants to shuffle the guests around because he thinks this will create a vacancy (a room without a guest).\n\nFor any integer k and positive integer n, let kmod n denote the remainder when k is divided by n. More formally, r=kmod n is the smallest non-negative integer such that k-r is divisible by n. It always holds that 0≤ kmod n≤ n-1. For example, 100mod 12=4 and (-1337)mod 3=1.\n\nThen the shuffling works as follows. There is an array of n integers a_0,a_1,…,a_{n-1}. Then for each integer k, the guest in room k is moved to room number k+a_{kmod n}.\n\nAfter this shuffling process, determine if there is still exactly one guest assigned to each room. That is, there are no vacancies or rooms with multiple guests.\n\nInput\n\nEach test consists of multiple test cases. The first line contains a single integer t (1≤ t≤ 10^4) — the number of test cases. Next 2t lines contain descriptions of test cases.\n\nThe first line of each test case contains a single integer n (1≤ n≤ 2⋅ 10^5) — the length of the array.\n\nThe second line of each test case contains n integers a_0,a_1,…,a_{n-1} (-10^9≤ a_i≤ 10^9).\n\nIt is guaranteed that the sum of n over all test cases does not exceed 2⋅ 10^5.\n\nOutput\n\nFor each test case, output a single line containing \"YES\" if there is exactly one guest assigned to each room after the shuffling process, or \"NO\" otherwise. You can print each letter in any case (upper or lower).\n\nExample\n\nInput\n\n\n6\n1\n14\n2\n1 -1\n4\n5 5 5 1\n3\n3 2 1\n2\n0 1\n5\n-239 -2 -100 -3 -11\n\n\nOutput\n\n\nYES\nYES\nYES\nNO\nNO\nYES\n\nNote\n\nIn the first test case, every guest is shifted by 14 rooms, so the assignment is still unique.\n\nIn the second test case, even guests move to the right by 1 room, and odd guests move to the left by 1 room. We can show that the assignment is still unique.\n\nIn the third test case, every fourth guest moves to the right by 1 room, and the other guests move to the right by 5 rooms. We can show that the assignment is still unique.\n\nIn the fourth test case, guests 0 and 1 are both assigned to room 3.\n\nIn the fifth test case, guests 1 and 2 are both assigned to room 2.",
+      "difficulty": "MEDIUM_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1345/C",
+      "tags": [
+        "['Number theory', 'Sorting', 'Mathematics']"
+      ],
+      "skill_types": [
+        "['Sorting']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02701",
+      "question": "A positive number $x$ of length $n$ in base $p$ ($2 \\le p \\le 10^9$) is written on the blackboard. The number $x$ is given as a sequence $a_1, a_2, \\dots, a_n$ ($0 \\le a_i < p$) — the digits of $x$ in order from left to right (most significant to least significant).\n\nDmitry is very fond of all the digits of this number system, so he wants to see each of them at least once.\n\nIn one operation, he can:\n\ntake any number $x$ written on the board, increase it by $1$, and write the new value $x + 1$ on the board.\n\nFor example, $p=5$ and $x=234_5$.\n\nInitially, the board contains the digits $2$, $3$ and $4$;\n\nDmitry increases the number $234_5$ by $1$ and writes down the number $240_5$. On the board there are digits $0, 2, 3, 4$;\n\nDmitry increases the number $240_5$ by $1$ and writes down the number $241_5$. Now the board contains all the digits from $0$ to $4$.\n\nYour task is to determine the minimum number of operations required to make all the digits from $0$ to $p-1$ appear on the board at least once.\n\n\n-----Input-----\n\nThe first line of the input contains a single integer $t$ ($1 \\le t \\le 2 \\cdot 10^3$) — the number of test cases. The descriptions of the input test cases follow.\n\nThe first line of description of each test case contains two integers $n$ ($1 \\le n \\le 100$) and $p$ ($2 \\le p \\le 10^9$) — the length of the number and the base of the number system.\n\nThe second line of the description of each test case contains $n$ integers $a_1, a_2, \\dots, a_n$ ($0 \\le a_i < p$) — digits of $x$ in number system with base $p$\n\nIt is guaranteed that the number $x$ does not contain leading zeros (that is, $a_1>0$).\n\n\n-----Output-----\n\nFor each test case print a single integer — the minimum number of operations required for Dmitry to get all the digits on the board from $0$ to $p-1$.\n\nIt can be shown that this always requires a finite number of operations.\n\n\n-----Examples-----\n\nInput\n11\n2 3\n1 2\n4 2\n1 1 1 1\n6 6\n1 2 3 4 5 0\n5 2\n1 0 1 0 1\n3 10\n1 2 3\n5 1000\n4 1 3 2 5\n3 5\n2 3 4\n4 4\n3 2 3 0\n1 3\n2\n5 5\n1 2 2 2 4\n3 4\n1 0 1\nOutput\n1\n1\n0\n0\n7\n995\n2\n1\n1\n1\n2\n\n\n-----Note-----\n\nNone",
+      "difficulty": "MEDIUM_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1759/F",
+      "tags": [
+        "['Sorting', 'Greedy algorithms', 'Number theory', 'Mathematics', 'Data structures']"
+      ],
+      "skill_types": [
+        "['Sorting', 'Data structures', 'Greedy algorithms']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02924",
+      "question": "<image>\n\nSlastyona and her loyal dog Pushok are playing a meaningless game that is indeed very interesting.\n\nThe game consists of multiple rounds. Its rules are very simple: in each round, a natural number k is chosen. Then, the one who says (or barks) it faster than the other wins the round. After that, the winner's score is multiplied by k2, and the loser's score is multiplied by k. In the beginning of the game, both Slastyona and Pushok have scores equal to one.\n\nUnfortunately, Slastyona had lost her notepad where the history of all n games was recorded. She managed to recall the final results for each games, though, but all of her memories of them are vague. Help Slastyona verify their correctness, or, to put it another way, for each given pair of scores determine whether it was possible for a game to finish with such result or not.\n\nInput\n\nIn the first string, the number of games n (1 ≤ n ≤ 350000) is given.\n\nEach game is represented by a pair of scores a, b (1 ≤ a, b ≤ 109) – the results of Slastyona and Pushok, correspondingly.\n\nOutput\n\nFor each pair of scores, answer \"Yes\" if it's possible for a game to finish with given score, and \"No\" otherwise.\n\nYou can output each letter in arbitrary case (upper or lower).\n\nExample\n\nInput\n\n6\n2 4\n75 45\n8 8\n16 16\n247 994\n1000000000 1000000\n\n\nOutput\n\nYes\nYes\nYes\nNo\nNo\nYes\n\nNote\n\nFirst game might have been consisted of one round, in which the number 2 would have been chosen and Pushok would have won.\n\nThe second game needs exactly two rounds to finish with such result: in the first one, Slastyona would have said the number 5, and in the second one, Pushok would have barked the number 3.",
+      "difficulty": "MEDIUM_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/834/C",
+      "tags": [
+        "['Number theory', 'Mathematics']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03246",
+      "question": "Read problems statements in Mandarin Chinese  and Russian. \nChef sometimes suffers from insomnia. During sleepless nights, he often plays this game: He creates an array A of N integers and also decides one integer K. After that, he tries to count the number of non-empty contiguous subsequences (subsegments) of A, such that there are no bad pairs of integers in this subsegment. A pair (x, y) of integers is called bad if x is situated to the left of y in the array and x mod y = K. Finally, before going to sleep, Chef wrote down the answer on a sheet of paper. Sadly, he has forgotten it this morning and want your help regarding that.\n\n------ Input ------ \n\nThe first line contains two integers - N and K.\nSecond line contains N integers - A_{1}, A_{2} ... A_{N} - separated by spaces, denoting the array A.\n\n------ Output ------ \n\nA single line containing an integer - the answer to the problem.\n\n------ Constraints ------ \n\n$1 ≤ N, A_{i} ≤ 10^{5} $\n$0 ≤ K ≤ 10^{5} $\n\n------ Subtasks ------ \n\n$Subtask 1: N ≤ 100 (15 points) $\n$Subtask 2: N ≤ 1000 (15 points) $\n$Subtask 3: K = 0 (10 points) $\n$Subtask 4: Original constraints (60 points) $\n\n----- Sample Input 1 ------ \n3 2\n5 3 1\n----- Sample Output 1 ------ \n4",
+      "difficulty": "HARD",
+      "name": null,
+      "source": "codechef",
+      "url": "https://www.codechef.com/problems/CHINSM",
+      "tags": [
+        "['Constructive algorithms', 'Range queries', 'Number theory', 'Mathematics', 'Ad-hoc']"
+      ],
+      "skill_types": [
+        "['Range queries']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03098",
+      "question": "Cirno gave AquaMoon a chessboard of size $1 \\times n$. Its cells are numbered with integers from $1$ to $n$ from left to right. In the beginning, some of the cells are occupied with at most one pawn, and other cells are unoccupied.\n\nIn each operation, AquaMoon can choose a cell $i$ with a pawn, and do either of the following (if possible):\n\nMove pawn from it to the $(i+2)$-th cell, if $i+2 \\leq n$ and the $(i+1)$-th cell is occupied and the $(i+2)$-th cell is unoccupied.\n\nMove pawn from it to the $(i-2)$-th cell, if $i-2 \\geq 1$ and the $(i-1)$-th cell is occupied and the $(i-2)$-th cell is unoccupied.\n\nYou are given an initial state of the chessboard. AquaMoon wants to count the number of states reachable from the initial state with some sequence of operations. But she is not good at programming. Can you help her? As the answer can be large find it modulo $998\\,244\\,353$.\n\n\n-----Input-----\n\nThe input consists of multiple test cases. The first line contains a single integer $t$ ($1 \\leq t \\leq 10000$) — the number of test cases.\n\nThe first line contains a single integer $n$ ($1 \\leq n \\leq 10^5$) — the size of the chessboard.\n\nThe second line contains a string of $n$ characters, consists of characters \"0\" and \"1\". If the $i$-th character is \"1\", the $i$-th cell is initially occupied; otherwise, the $i$-th cell is initially unoccupied.\n\nIt is guaranteed that the sum of $n$ over all test cases does not exceed $10^5$.\n\n\n-----Output-----\n\nFor each test case, print the number of states that reachable from the initial state with some sequence of operations modulo $998\\,244\\,353$.\n\n\n-----Examples-----\n\nInput\n6\n4\n0110\n6\n011011\n5\n01010\n20\n10001111110110111000\n20\n00110110100110111101\n20\n11101111011000100010\nOutput\n3\n6\n1\n1287\n1287\n715\n\n\n-----Note-----\n\nIn the first test case the strings \"1100\", \"0110\" and \"0011\" are reachable from the initial state with some sequence of operations.",
+      "difficulty": "HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1545/B",
+      "tags": [
+        "['Combinatorics', 'Mathematics']"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03321",
+      "question": "The Berland Forest can be represented as an infinite cell plane. Every cell contains a tree. That is, contained before the recent events.\n\nA destructive fire raged through the Forest, and several trees were damaged by it. Precisely speaking, you have a $n \\times m$ rectangle map which represents the damaged part of the Forest. The damaged trees were marked as \"X\" while the remaining ones were marked as \".\". You are sure that all burnt trees are shown on the map. All the trees outside the map are undamaged.\n\nThe firemen quickly extinguished the fire, and now they are investigating the cause of it. The main version is that there was an arson: at some moment of time (let's consider it as $0$) some trees were set on fire. At the beginning of minute $0$, only the trees that were set on fire initially were burning. At the end of each minute, the fire spread from every burning tree to each of $8$ neighboring trees. At the beginning of minute $T$, the fire was extinguished.\n\nThe firemen want to find the arsonists as quickly as possible. The problem is, they know neither the value of $T$ (how long the fire has been raging) nor the coordinates of the trees that were initially set on fire. They want you to find the maximum value of $T$ (to know how far could the arsonists escape) and a possible set of trees that could be initially set on fire.\n\nNote that you'd like to maximize value $T$ but the set of trees can be arbitrary.\n\n\n-----Input-----\n\nThe first line contains two integer $n$ and $m$ ($1 \\le n, m \\le 10^6$, $1 \\le n \\cdot m \\le 10^6$) — the sizes of the map.\n\nNext $n$ lines contain the map. The $i$-th line corresponds to the $i$-th row of the map and contains $m$-character string. The $j$-th character of the $i$-th string is \"X\" if the corresponding tree is burnt and \".\" otherwise.\n\nIt's guaranteed that the map contains at least one \"X\".\n\n\n-----Output-----\n\nIn the first line print the single integer $T$ — the maximum time the Forest was on fire. In the next $n$ lines print the certificate: the map ($n \\times m$ rectangle) where the trees that were set on fire are marked as \"X\" and all other trees are marked as \".\".\n\n\n-----Examples-----\nInput\n3 6\nXXXXXX\nXXXXXX\nXXXXXX\n\nOutput\n1\n......\n.X.XX.\n......\n\nInput\n10 10\n.XXXXXX...\n.XXXXXX...\n.XXXXXX...\n.XXXXXX...\n.XXXXXXXX.\n...XXXXXX.\n...XXXXXX.\n...XXXXXX.\n...XXXXXX.\n..........\n\nOutput\n2\n..........\n..........\n...XX.....\n..........\n..........\n..........\n.....XX...\n..........\n..........\n..........\n\nInput\n4 5\nX....\n..XXX\n..XXX\n..XXX\n\nOutput\n0\nX....\n..XXX\n..XXX\n..XXX",
+      "difficulty": "HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1262/E",
+      "tags": [
+        "['Sorting', 'Graph algorithms', 'Data structures', 'Shortest paths']"
+      ],
+      "skill_types": [
+        "['Sorting', 'Data structures']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_01270",
+      "question": "You are given a graph with 3 ⋅ n vertices and m edges. You are to find a matching of n edges, or an independent set of n vertices.\n\nA set of edges is called a matching if no two edges share an endpoint.\n\nA set of vertices is called an independent set if no two vertices are connected with an edge.\n\nInput\n\nThe first line contains a single integer T ≥ 1 — the number of graphs you need to process. The description of T graphs follows.\n\nThe first line of description of a single graph contains two integers n and m, where 3 ⋅ n is the number of vertices, and m is the number of edges in the graph (1 ≤ n ≤ 10^{5}, 0 ≤ m ≤ 5 ⋅ 10^{5}).\n\nEach of the next m lines contains two integers v_i and u_i (1 ≤ v_i, u_i ≤ 3 ⋅ n), meaning that there is an edge between vertices v_i and u_i.\n\nIt is guaranteed that there are no self-loops and no multiple edges in the graph.\n\nIt is guaranteed that the sum of all n over all graphs in a single test does not exceed 10^{5}, and the sum of all m over all graphs in a single test does not exceed 5 ⋅ 10^{5}.\n\nOutput\n\nPrint your answer for each of the T graphs. Output your answer for a single graph in the following format.\n\nIf you found a matching of size n, on the first line print \"Matching\" (without quotes), and on the second line print n integers — the indices of the edges in the matching. The edges are numbered from 1 to m in the input order.\n\nIf you found an independent set of size n, on the first line print \"IndSet\" (without quotes), and on the second line print n integers — the indices of the vertices in the independent set.\n\nIf there is no matching and no independent set of the specified size, print \"Impossible\" (without quotes).\n\nYou can print edges and vertices in any order.\n\nIf there are several solutions, print any. In particular, if there are both a matching of size n, and an independent set of size n, then you should print exactly one of such matchings or exactly one of such independent sets.\n\nExample\n\nInput\n\n\n4\n1 2\n1 3\n1 2\n1 2\n1 3\n1 2\n2 5\n1 2\n3 1\n1 4\n5 1\n1 6\n2 15\n1 2\n1 3\n1 4\n1 5\n1 6\n2 3\n2 4\n2 5\n2 6\n3 4\n3 5\n3 6\n4 5\n4 6\n5 6\n\n\nOutput\n\n\nMatching\n2\nIndSet\n1\nIndSet\n2 4\nMatching\n1 15\n\nNote\n\nThe first two graphs are same, and there are both a matching of size 1 and an independent set of size 1. Any of these matchings and independent sets is a correct answer.\n\nThe third graph does not have a matching of size 2, however, there is an independent set of size 2. Moreover, there is an independent set of size 5: 2 3 4 5 6. However such answer is not correct, because you are asked to find an independent set (or matching) of size exactly n.\n\nThe fourth graph does not have an independent set of size 2, but there is a matching of size 2.",
+      "difficulty": "HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1199/E",
+      "tags": [
+        "['Greedy algorithms', 'Sorting', 'Graph algorithms', 'Constructive algorithms']"
+      ],
+      "skill_types": [
+        "['Sorting', 'Greedy algorithms']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_01044",
+      "question": "Bertown is under siege! The attackers have blocked all the ways out and their cannon is bombarding the city. Fortunately, Berland intelligence managed to intercept the enemies' shooting plan. Let's introduce the Cartesian system of coordinates, the origin of which coincides with the cannon's position, the Ox axis is directed rightwards in the city's direction, the Oy axis is directed upwards (to the sky). The cannon will make n more shots. The cannon balls' initial speeds are the same in all the shots and are equal to V, so that every shot is characterized by only one number alphai which represents the angle at which the cannon fires. Due to the cannon's technical peculiarities this angle does not exceed 45 angles (π / 4). We disregard the cannon sizes and consider the firing made from the point (0, 0).\n\nThe balls fly according to the known physical laws of a body thrown towards the horizon at an angle: \n\nvx(t) = V·cos(alpha) vy(t) = V·sin(alpha) – g·t x(t) = V·cos(alpha)·t y(t) = V·sin(alpha)·t – g·t2 / 2\n\nThink of the acceleration of gravity g as equal to 9.8.\n\nBertown defends m walls. The i-th wall is represented as a vertical segment (xi, 0) - (xi, yi). When a ball hits a wall, it gets stuck in it and doesn't fly on. If a ball doesn't hit any wall it falls on the ground (y = 0) and stops. If the ball exactly hits the point (xi, yi), it is considered stuck. \n\nYour task is to find for each ball the coordinates of the point where it will be located in the end.\n\nInput\n\nThe first line contains integers n and V (1 ≤ n ≤ 104, 1 ≤ V ≤ 1000) which represent the number of shots and the initial speed of every ball. The second line contains n space-separated real numbers alphai (0 < alphai < π / 4) which represent the angles in radians at which the cannon will fire. The third line contains integer m (1 ≤ m ≤ 105) which represents the number of walls. Then follow m lines, each containing two real numbers xi and yi (1 ≤ xi ≤ 1000, 0 ≤ yi ≤ 1000) which represent the wall’s coordinates. All the real numbers have no more than 4 decimal digits. The walls may partially overlap or even coincide.\n\nOutput\n\nPrint n lines containing two real numbers each — calculate for every ball the coordinates of its landing point. Your answer should have the relative or absolute error less than 10 - 4.\n\nExamples\n\nInput\n\n2 10\n0.7853\n0.3\n3\n5.0 5.0\n4.0 2.4\n6.0 1.9\n\n\nOutput\n\n5.000000000 2.549499369\n4.000000000 0.378324889\n\n\nInput\n\n2 10\n0.7853\n0.3\n2\n4.0 2.4\n6.0 1.9\n\n\nOutput\n\n10.204081436 0.000000000\n4.000000000 0.378324889",
+      "difficulty": "HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/47/E",
+      "tags": [
+        "['Geometry', 'Sorting', 'Data structures']"
+      ],
+      "skill_types": [
+        "['Sorting', 'Data structures']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02491",
+      "question": "Let's call an array $a$ of $m$ integers $a_1, a_2, \\ldots, a_m$ Decinc if $a$ can be made increasing by removing a decreasing subsequence (possibly empty) from it.\n\nFor example, if $a = [3, 2, 4, 1, 5]$, we can remove the decreasing subsequence $[a_1, a_4]$ from $a$ and obtain $a = [2, 4, 5]$, which is increasing.\n\nYou are given a permutation $p$ of numbers from $1$ to $n$. Find the number of pairs of integers $(l, r)$ with $1 \\le l \\le r \\le n$ such that $p[l \\ldots r]$ (the subarray of $p$ from $l$ to $r$) is a Decinc array.\n\n\n-----Input-----\n\nThe first line contains a single integer $n$ ($1 \\le n \\le 2 \\cdot 10^5$)  — the size of $p$.\n\nThe second line contains $n$ integers $p_1, p_2, \\ldots, p_n$ ($1 \\le p_i \\le n$, all $p_i$ are distinct)  — elements of the permutation.\n\n\n-----Output-----\n\nOutput the number of pairs of integers $(l, r)$ such that $p[l \\ldots r]$ (the subarray of $p$ from $l$ to $r$) is a Decinc array. $(1 \\le l \\le r \\le n)$\n\n\n-----Examples-----\n\nInput\n3\n2 3 1\nOutput\n6\nInput\n6\n4 5 2 6 1 3\nOutput\n19\nInput\n10\n7 10 1 8 3 9 2 4 6 5\nOutput\n39\n\n\n-----Note-----\n\nIn the first sample, all subarrays are Decinc.\n\nIn the second sample, all subarrays except $p[1 \\ldots 6]$ and $p[2 \\ldots 6]$ are Decinc.",
+      "difficulty": "VERY_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1693/D",
+      "tags": [
+        "['Greedy algorithms', 'Complete search', 'Dynamic programming', 'Divide and conquer', 'Data structures']"
+      ],
+      "skill_types": [
+        "['Dynamic programming', 'Data structures', 'Complete search', 'Greedy algorithms']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_00796",
+      "question": "There is a light source on the plane. This source is so small that it can be represented as point. The light source is moving from point (a, s_y) to the (b, s_y) (s_y < 0) with speed equal to 1 unit per second. The trajectory of this light source is a straight segment connecting these two points. \n\nThere is also a fence on OX axis represented as n segments (l_i, r_i) (so the actual coordinates of endpoints of each segment are (l_i, 0) and (r_i, 0)). The point (x, y) is in the shade if segment connecting (x,y) and the current position of the light source intersects or touches with any segment of the fence.\n\n<image>\n\nYou are given q points. For each point calculate total time of this point being in the shade, while the light source is moving from (a, s_y) to the (b, s_y).\n\nInput\n\nFirst line contains three space separated integers s_y, a and b (-10^9 ≤ s_y < 0, 1 ≤ a < b ≤ 10^9) — corresponding coordinates of the light source.\n\nSecond line contains single integer n (1 ≤ n ≤ 2 ⋅ 10^5) — number of segments in the fence.\n\nNext n lines contain two integers per line: l_i and r_i (1 ≤ l_i < r_i ≤ 10^9, r_{i - 1} < l_i) — segments in the fence in increasing order. Segments don't intersect or touch each other.\n\nNext line contains single integer q (1 ≤ q ≤ 2 ⋅ 10^5) — number of points to check.\n\nNext q lines contain two integers per line: x_i and y_i (1 ≤ x_i, y_i ≤ 10^9) — points to process.\n\nOutput\n\nPrint q lines. The i-th line should contain one real number — total time of the i-th point being in the shade, while the light source is moving from (a, s_y) to the (b, s_y). The answer is considered as correct if its absolute of relative error doesn't exceed 10^{-6}.\n\nExample\n\nInput\n\n-3 1 6\n2\n2 4\n6 7\n5\n3 1\n1 3\n6 1\n6 4\n7 6\n\n\nOutput\n\n5.000000000000000\n3.000000000000000\n0.000000000000000\n1.500000000000000\n2.000000000000000\n\nNote\n\n  * The 1-st point is always in the shade; \n  * the 2-nd point is in the shade while light source is moving from (3, -3) to (6, -3); \n  * the 3-rd point is in the shade while light source is at point (6, -3). \n  * the 4-th point is in the shade while light source is moving from (1, -3) to (2.5, -3) and at point (6, -3); \n  * the 5-th point is in the shade while light source is moving from (1, -3) to (2.5, -3) and from (5.5, -3) to (6, -3);",
+      "difficulty": "VERY_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1016/E",
+      "tags": [
+        "['Geometry', 'Sorting']"
+      ],
+      "skill_types": [
+        "['Sorting']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03629",
+      "question": "Read problems statements [Hindi] , [Vietnamese] , [Mandarin Chinese] , [Russian] and [Bengali] as well.\n\nIn ShareChat, there is a sequence of binary integers $A_{1}, A_{2}, \\ldots, A_{N}$. You should answer $Q$ queries on this sequence. In each query, you are given two indices $L$ and $R$ and a binary integer $X$.\n\nThe answer to a query is the smallest index $i$ ($L ≤ i ≤ R$) such that the value $A_{i} \\oplus X$ is maximum possible, i.e. equal to $\\mathrm{max}(A_{L} \\oplus X, A_{L+1} \\oplus X, \\ldots, A_{R} \\oplus X)$. Here, $\\oplus$ denotes the bitwise XOR operation.\n\n------  Input ------\nThe first line of the input contains two space-separated integers $N$ and $Q$.\n$N$ lines follow. For each $i$ ($1 ≤ i ≤ N$), the $i$-th of these lines contains a single binary string denoting the number $A_{i}$ (in binary representation).\nThe following $Q$ lines describe queries. Each of these lines contains two space-separated integers $L$ and $R$, followed by a space and a binary string denoting the number $X$ (in binary representation).\n\n------  Output ------\nFor each query, print a single line containing one integer — the answer to that query.\n\n------  Constraints ------\n$1 ≤ N ≤ 10^{5}$\n$1 ≤ Q ≤ 10^{5}$\n$1 ≤ A_{i}$ for each valid $i$\n$1 ≤ L ≤ R ≤ N$\n$1 ≤ X$\nthe sum of lengths of strings denoting $A_{1}, A_{2}, \\ldots, A_{N}$ does not exceed $10^{6}$\nthe sum of lengths of strings denoting $X$ over all queries does not exceed $10^{6}$\n\n------  Subtasks ------\nSubtask #1 (33 points): all binary strings on the input have equal lengths\n\nSubtask #2 (67 points): original constraints\n\n----- Sample Input 1 ------ \n5 4\n\n100\n\n101\n\n1\n\n1011\n\n11\n\n2 3 10\n\n1 5 1100\n\n3 5 1010\n\n1 5 11100\n----- Sample Output 1 ------ \n2\n\n5\n\n3\n\n5",
+      "difficulty": "VERY_HARD",
+      "name": null,
+      "source": "codechef",
+      "url": "https://www.codechef.com/problems/BINSTR",
+      "tags": [
+        "['Bit manipulation', 'String algorithms', 'Sorting', 'Segment trees revisited', 'Complete search', 'Mathematics', 'Data structures']"
+      ],
+      "skill_types": [
+        "['Bit manipulation', 'Sorting', 'Data structures', 'Complete search']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_00120",
+      "question": "Petya recently found a game \"Choose a Square\". In this game, there are n points numbered from 1 to n on an infinite field. The i-th point has coordinates (x_i, y_i) and cost c_i.\n\nYou have to choose a square such that its sides are parallel to coordinate axes, the lower left and upper right corners belong to the line y = x, and all corners have integer coordinates.\n\nThe score you get is the sum of costs of the points covered by the selected square minus the length of the side of the square. Note that the length of the side can be zero.\n\nPetya asks you to calculate the maximum possible score in the game that can be achieved by placing exactly one square.\n\nInput\n\nThe first line of the input contains one integer n (1 ≤ n ≤ 5 ⋅ 10^5) — the number of points on the field.\n\nEach of the following n lines contains three integers x_i, y_i, c_i (0 ≤ x_i, y_i ≤ 10^9, -10^6 ≤ c_i ≤ 10^6) — coordinates of the i-th point and its cost, respectively.\n\nOutput\n\nIn the first line print the maximum score Petya can achieve.\n\nIn the second line print four integers x_1, y_1, x_2, y_2 (0 ≤ x_1, y_1, x_2, y_2 ≤ 2 ⋅ 10^9, x_1 = y_1, x_2 = y_2, x_1 ≤ x_2) separated by spaces — the coordinates of the lower left and upper right corners of the square which Petya has to select in order to achieve the maximum score.\n\nExamples\n\nInput\n\n\n6\n0 0 2\n1 0 -5\n1 1 3\n2 3 4\n1 4 -4\n3 1 -1\n\n\nOutput\n\n\n4\n1 1 3 3\n\n\nInput\n\n\n5\n3 3 0\n3 3 -3\n0 2 -1\n3 1 3\n0 0 -2\n\n\nOutput\n\n\n0\n1 1 1 1\n\nNote\n\nThe field corresponding to the first example: <image>",
+      "difficulty": "VERY_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/1221/F",
+      "tags": [
+        "['Sorting', 'Data structures']"
+      ],
+      "skill_types": [
+        "['Sorting', 'Data structures']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_03487",
+      "question": "Earlier, when there was no Internet, each bank had a lot of offices all around Bankopolis, and it caused a lot of problems. Namely, each day the bank had to collect cash from all the offices.\n\nOnce Oleg the bank client heard a dialogue of two cash collectors. Each day they traveled through all the departments and offices of the bank following the same route every day. The collectors started from the central department and moved between some departments or between some department and some office using special roads. Finally, they returned to the central department. The total number of departments and offices was n, the total number of roads was n - 1. In other words, the special roads system was a rooted tree in which the root was the central department, the leaves were offices, the internal vertices were departments. The collectors always followed the same route in which the number of roads was minimum possible, that is 2n - 2.\n\nOne of the collectors said that the number of offices they visited between their visits to offices a and then b (in the given order) is equal to the number of offices they visited between their visits to offices b and then a (in this order). The other collector said that the number of offices they visited between their visits to offices c and then d (in this order) is equal to the number of offices they visited between their visits to offices d and then c (in this order). The interesting part in this talk was that the shortest path (using special roads only) between any pair of offices among a, b, c and d passed through the central department.\n\nGiven the special roads map and the indexes of offices a, b, c and d, determine if the situation described by the collectors was possible, or not.\n\nInput\n\nThe first line contains single integer n (5 ≤ n ≤ 5000) — the total number of offices and departments. The departments and offices are numbered from 1 to n, the central office has index 1.\n\nThe second line contains four integers a, b, c and d (2 ≤ a, b, c, d ≤ n) — the indexes of the departments mentioned in collector's dialogue. It is guaranteed that these indexes are offices (i.e. leaves of the tree), not departments. It is guaranteed that the shortest path between any pair of these offices passes through the central department.\n\nOn the third line n - 1 integers follow: p2, p3, ..., pn (1 ≤ pi < i), where pi denotes that there is a special road between the i-th office or department and the pi-th department.\n\nPlease note the joint enumeration of departments and offices.\n\nIt is guaranteed that the given graph is a tree. The offices are the leaves, the departments are the internal vertices.\n\nOutput\n\nIf the situation described by the cash collectors was possible, print \"YES\". Otherwise, print \"NO\".\n\nExamples\n\nInput\n\n5\n2 3 4 5\n1 1 1 1\n\n\nOutput\n\nYES\n\nInput\n\n10\n3 8 9 10\n1 2 2 2 2 2 1 1 1\n\n\nOutput\n\nNO\n\nInput\n\n13\n13 12 9 7\n1 1 1 1 5 5 2 2 2 3 3 4\n\n\nOutput\n\nYES\n\nNote\n\nIn the first example the following collector's route was possible: <image>. We can note that between their visits to offices a and b the collectors visited the same number of offices as between visits to offices b and a; the same holds for c and d (the collectors' route is infinite as they follow it each day).\n\nIn the second example there is no route such that between their visits to offices c and d the collectors visited the same number of offices as between visits to offices d and c. Thus, there situation is impossible. \n\nIn the third example one of the following routes is: <image>.",
+      "difficulty": "VERY_HARD",
+      "name": null,
+      "source": "codeforces",
+      "url": "https://codeforces.com/problemset/problem/793/E",
+      "tags": [
+        "['Tree algorithms', 'Dynamic programming', 'Graph traversal', 'Constructive algorithms']"
+      ],
+      "skill_types": [
+        "['Dynamic programming']"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02354",
+      "question": "Given a string of letters in the input, return a string in the output with each words written in reverse order. Spaces and punctuations must not change their position. Numbers may be present in a string. The end of the string will have a \".\" without the quotes.\n\n\nInput\nInput string\n\n\nOutput\nOutput String\n\n\nExample\n\nInput:\nWelcome to NITMASFEST.\n\nOutput:\nemocleW ot TSEFSAMTIN.",
+      "difficulty": "UNKNOWN_DIFFICULTY",
+      "name": null,
+      "source": "codechef",
+      "url": "https://www.codechef.com/problems/NF03",
+      "tags": [
+        "[]"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02160",
+      "question": "Run, Twins\n\nE869120 You started running from home to school at a speed of $ P $ meters per minute.\n\nsquare1001 noticed E869120's forgotten thing $ A $ minutes after E869120 left home and chased at $ Q $ meters per minute.\n\nThen E869120 noticed something left behind $ B $ minutes after E869120 left home and turned back at $ R $ meters per minute.\n\nE869120 How many minutes after you leave home will the twins meet?\n\nHowever, E869120 and square1001 will not meet by $ B $ minutes.\n\nAlso, assume that there is only one road from E869120 and square1001's house to school, and there are no shortcuts or alternatives.\n\ninput\n\nInput is given from standard input in the following format.\n\n\n$ A $ $ B $\n$ P $ $ Q $ $ R $\n\n\noutput\n\nOutput the time from when E869120 left home to when E869120 and square1001 meet.\n\nHowever, insert a line break at the end.\n\nIf the absolute error or relative error from the assumed answer is within $ 10 ^ {-3} $, it will be treated as a correct answer.\n\nConstraint\n\n* $ 1 \\ leq A \\ leq B \\ leq 100 $\n* $ 1 \\ leq Q \\ leq P \\ leq 100 $\n* $ 1 \\ leq R \\ leq 100 $\n* All inputs are integers.\n\n\n\nInput example 1\n\n\n14 86\n9 1 20\n\n\nOutput example 1\n\n\n119.428571428571\n\n\nInput example 2\n\n\n14\n15 9 2\n\n\nOutput example 2\n\n\n7.000000000000\n\n\nInput example 3\n\n\n67 87\n7 4 51\n\n\nOutput example 3\n\n\n96.618181818182\n\n\n\n\n\n\nExample\n\nInput\n\n14 86\n9 1 20\n\n\nOutput\n\n119.428571428571",
+      "difficulty": "UNKNOWN_DIFFICULTY",
+      "name": null,
+      "source": "aizu",
+      "url": null,
+      "tags": [
+        "[]"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_02645",
+      "question": "Tanya and Nina are very close friends, still Tanya is jealous of Nina's problem solving skills. To prove Nina that she is even better than her, Tanya challenged Nina in a game known as Connecting the Dots which she described to her as follows:\n\nThere are N dots numbered from 1 to N.\n\nM pair of dots are connected to each other using a ray pointing from one dot to other. \n\nEach ray will be of one of the K colors.\n\nThe objective of the game is to reach dot N starting from dot 1 moving on minimum number of rays pointing from one dot to another.\n\nNina interrupted Tanya and said \"Ohh thats so easy!\". Tanya smiled and said, \"Wait a moment dear, it's not yet over. There is a special constraint to the above problem i.e. the path of rays connecting dot 1 and dot N should be such that no two successive edges are of the same color, and the path of rays to Node N from Node 1 should be the shortest.\"\n\nNina thought for a while bu then realized that the number of dots could be large enough to calculate the answer manually, so she seeks your help. \n\nInput:\n\nThe first line of the input file consists of two integers N and M (). \nNext M lines contain descriptions of the rays. \n\nEach ray description is a list of three integers X, Y, C which means there exists a C colored ray starting from dot X and pointing to dot Y. All the 3 integers are separated by a single space.\n\nOutput:\n\nPrint the length of the shortes path between the first dot and the N'th dot.\nPrint \"-1\" if no such path exists.\n\nConstraints:\n\n2 ≤ N ≤ 1000\n\n0 ≤ M ≤ N*N\n\n1 ≤ X, Y ≤ N\n\n1 ≤ C ≤ 3\n\nUpdate: A test file for the problem Connecting the dots has been removed, and hence the points for the problem is decreased by 5.\n\nSAMPLE INPUT\n4 4\n1 2 1\n2 3 2\n2 4 1\n3 4 3\n\nSAMPLE OUTPUT\n3",
+      "difficulty": "UNKNOWN_DIFFICULTY",
+      "name": "connecting-the-dots",
+      "source": "hackerearth",
+      "url": null,
+      "tags": [
+        "[]"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_00003",
+      "question": "If you visit Aizu Akabeko shrine, you will find a unique paper fortune on which a number with more than one digit is written.\n\nEach digit ranges from 1 to 9 (zero is avoided because it is considered a bad omen in this shrine). Using this string of numeric values, you can predict how many years it will take before your dream comes true. Cut up the string into more than one segment and compare their values. The difference between the largest and smallest value will give you the number of years before your wish will be fulfilled. Therefore, the result varies depending on the way you cut up the string. For example, if you are given a string 11121314 and divide it into segments, say, as 1,11,21,3,14, then the difference between the largest and smallest is 21 - 1 = 20. Another division 11,12,13,14 produces 3 (i.e. 14 - 11) years. Any random division produces a game of luck. However, you can search the minimum number of years using a program.\n\nGiven a string of numerical characters, write a program to search the minimum years before your wish will be fulfilled.\n\n\n\nInput\n\nThe input is given in the following format.\n\n\nn\n\n\nAn integer n is given. Its number of digits is from 2 to 100,000, and each digit ranges from 1 to 9.\n\nOutput\n\nOutput the minimum number of years before your wish will be fulfilled.\n\nExamples\n\nInput\n\n11121314\n\n\nOutput\n\n3\n\n\nInput\n\n123125129\n\n\nOutput\n\n6\n\n\nInput\n\n119138\n\n\nOutput\n\n5",
+      "difficulty": "UNKNOWN_DIFFICULTY",
+      "name": null,
+      "source": "aizu",
+      "url": null,
+      "tags": [
+        "[]"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    },
+    {
+      "id": "taco_01454",
+      "question": "problem\n\nA city in Canada where JOI lives is divided into a grid pattern by w roads that extend straight in the north-south direction and h roads that extend straight in the east-west direction.\n\nThe w roads in the north-south direction are numbered 1, 2, ..., w in order from the west. In addition, h roads in the east-west direction are numbered 1, 2, ..., h in order from the south. The intersection of the i-th north-south road from the west and the j-th east-west road from the south is represented by (i, j).\n\nJOI lives near the intersection (1, 1) and drives to a company near the intersection (w, h). Cars can only move along the road. JOI travels only to the east or north to shorten his commute time. The city also has the following traffic rules to reduce traffic accidents:\n\n* A car that turns at an intersection cannot turn at the intersection immediately after that.\n\n\n\nThat is, it is not permissible to go one block after turning at an intersection and turn again. At this time, how many possible commuting routes for Mr. JOI?\n\nGiven w and h, create a program that outputs the remainder of JOI's number of commuting routes divided by 100000.\n\n\n\ninput\n\nThe input consists of multiple datasets. Each dataset consists of one line, and two integers w, h (2 ≤ w ≤ 100, 2 ≤ h ≤ 100) are written, separated by a blank. w represents the number of roads in the north-south direction, and h represents the number of roads in the east-west direction.\n\nWhen both w and h are 0, it indicates the end of input. The number of data sets does not exceed 5.\n\noutput\n\nFor each data set, the remainder of JOI's number of commuting routes divided by 100000 is output on one line.\n\nExample\n\nInput\n\n3 4\n15 15\n0 0\n\n\nOutput\n\n5\n43688",
+      "difficulty": "UNKNOWN_DIFFICULTY",
+      "name": null,
+      "source": "aizu",
+      "url": null,
+      "tags": [
+        "[]"
+      ],
+      "skill_types": [
+        "[]"
+      ],
+      "starter_code": null
+    }
+  ]
+}

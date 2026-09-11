@@ -1,0 +1,373 @@
+/* =========================================================
+   SKILLBRIDGE GLOBAL STYLES
+   ========================================================= */
+
+:root {
+  --text: #344054;
+  --text-h: #101828;
+  --bg: #f5f7fb;
+  --border: #d0d5dd;
+
+  --code-bg: #f2f4f7;
+
+  --accent: #2563eb;
+  --accent-bg: rgba(37, 99, 235, 0.10);
+  --accent-border: rgba(37, 99, 235, 0.40);
+
+  --social-bg: #f2f4f7;
+
+  --shadow:
+    rgba(16, 24, 40, 0.10) 0 10px 15px -3px,
+    rgba(16, 24, 40, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 145%;
+  letter-spacing: 0.18px;
+
+  /* IMPORTANT:
+     Keep the application LIGHT.
+     Do not allow Windows/browser dark mode
+     to change the entire application. */
+  color-scheme: light;
+
+  color: var(--text);
+  background: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+html {
+  background: #f5f7fb;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: #f5f7fb;
+
+  color: #344054;
+
+  font-family: var(--sans);
+}
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  border-inline: 1px solid #e4e7ec;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #344054;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+
+  color: #101828 !important;
+
+  font-weight: 700;
+
+  margin-top: 0;
+}
+
+
+/* H1 */
+
+h1 {
+  font-size: 56px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.68px;
+
+  margin: 32px 0;
+
+  color: #101828 !important;
+}
+
+
+/* H2 */
+
+h2 {
+  font-size: 24px;
+
+  line-height: 118%;
+
+  letter-spacing: -0.24px;
+
+  margin: 0 0 8px;
+
+  color: #101828 !important;
+}
+
+
+/* H3 */
+
+h3 {
+  font-size: 20px;
+
+  line-height: 1.3;
+
+  color: #101828 !important;
+}
+
+
+/* H4 */
+
+h4 {
+  font-size: 18px;
+
+  color: #101828 !important;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+   ========================================================= */
+
+p {
+  margin: 0;
+
+  color: #344054;
+}
+
+
+/* =========================================================
+   TEXT ELEMENTS
+   ========================================================= */
+
+span {
+  color: inherit;
+}
+
+strong,
+b {
+  color: #101828;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: #1d4ed8;
+
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1e40af;
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  font-family: var(--sans);
+
+  color: #101828 !important;
+
+  background: #ffffff;
+
+  border-color: #d0d5dd;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #667085 !important;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  font-family: var(--sans);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+code,
+.counter {
+  font-family: var(--mono);
+
+  display: inline-flex;
+
+  border-radius: 4px;
+
+  color: #101828;
+}
+
+code {
+  font-size: 15px;
+
+  line-height: 135%;
+
+  padding: 4px 8px;
+
+  background: #f2f4f7;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+label {
+  color: #344054;
+}
+
+
+/* =========================================================
+   SMALL TEXT
+   ========================================================= */
+
+small {
+  color: #475467;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+
+  color: #101828;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f4f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #98a2b3;
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #667085;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  #root {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 36px;
+
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / READABILITY
+   ========================================================= */
+
+/* Prevent accidental transparent/faded text */
+
+[style*="opacity"] {
+  /* Existing component-specific opacity is allowed,
+     but global text remains readable. */
+}
+
+
+/* Make disabled text readable */
+
+button:disabled {
+  opacity: 0.65;
+}
+
+
+/* Never allow the application to switch into
+   browser dark mode automatically */
+
+html,
+body,
+#root {
+  color-scheme: light;
+}
