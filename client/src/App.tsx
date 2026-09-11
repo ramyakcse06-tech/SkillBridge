@@ -23,8 +23,12 @@ function App() {
   const [studentLoggedIn, setStudentLoggedIn] =
     useState(false);
 
+  const [studentUser, setStudentUser] = useState<any>(null);
+
   const [industryLoggedIn, setIndustryLoggedIn] =
     useState(false);
+
+  
 
   // ==========================================================
   // LANDING PAGE
@@ -141,9 +145,10 @@ function App() {
 
       return (
         <StudentLogin
-          onLogin={() =>
-            setStudentLoggedIn(true)
-          }
+          onLogin={(user) => {
+  setStudentUser(user);
+  setStudentLoggedIn(true);
+}}
           onBack={() =>
             setPortal("landing")
           }
@@ -153,6 +158,7 @@ function App() {
 
     return (
       <StudentDashboard
+        studentUser={studentUser}
         onBack={() => {
 
           setStudentLoggedIn(false);
@@ -208,19 +214,62 @@ function StudentLogin({
   onLogin,
   onBack,
 }: {
-  onLogin: () => void;
+  onLogin: (user: any) => void;
   onBack: () => void;
 }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const [email, setEmail] =
-    useState("");
+  const handleLogin = async () => {
+    setError("");
 
-  const [password, setPassword] =
-    useState("");
+    if (!email || !password) {
+      setError("Please enter email and password");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const response = await fetch("/api/auth/student/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        setError(data.message || "Invalid email or password");
+        return;
+      }
+
+      // Store authentication details
+      localStorage.setItem("skillbridge_token", data.token);
+      localStorage.setItem(
+        "skillbridge_user",
+        JSON.stringify(data.user)
+      );
+
+      // Send real user details to App
+      onLogin(data.user);
+    } catch (err) {
+      console.error("Student login error:", err);
+      setError("Unable to connect to server");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div style={styles.authPage}>
-
       <div style={styles.authBox}>
 
         <button
@@ -249,9 +298,7 @@ function StudentLogin({
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) =>
-            setEmail(e.target.value)
-          }
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
@@ -259,26 +306,25 @@ function StudentLogin({
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) =>
-            setPassword(e.target.value)
-          }
+          onChange={(e) => setPassword(e.target.value)}
         />
+
+        {error && (
+          <p style={{ color: "red", marginTop: "10px" }}>
+            {error}
+          </p>
+        )}
 
         <button
           type="button"
           style={styles.primaryButtonFull}
-          onClick={onLogin}
+          onClick={handleLogin}
+          disabled={loading}
         >
-          Login as Student
+          {loading ? "Logging in..." : "Login as Student"}
         </button>
 
-        <p style={styles.demoText}>
-          Demo login — enter any email
-          and password
-        </p>
-
       </div>
-
     </div>
   );
 }
@@ -289,8 +335,10 @@ function StudentLogin({
 
 function StudentDashboard({
   onBack,
+  studentUser,
 }: {
   onBack: () => void;
+  studentUser: any;
 }) {
 
   const [page, setPage] =
@@ -310,7 +358,7 @@ function StudentDashboard({
 
     return (
       <ResumeUpload
-        studentId={1}
+        studentId={studentUser?.id ?? 0}
 
         onBack={() => {
           setPage("dashboard");
@@ -360,7 +408,7 @@ function StudentDashboard({
 
     return (
       <OpportunityPortal
-        studentId={1}
+        studentId={studentUser?.id ?? 0}
         onBack={() =>
           setPage("dashboard")
         }
@@ -376,7 +424,7 @@ function StudentDashboard({
 
     return (
       <DocumentVault
-        studentId={1}
+        studentId={studentUser?.id ?? 0}
         onBack={() =>
           setPage("dashboard")
         }

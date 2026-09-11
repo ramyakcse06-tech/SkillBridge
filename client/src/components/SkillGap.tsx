@@ -49,23 +49,56 @@ function SkillGap({ studentId, occupationId, onBack }: Props) {
     const loadSkillGap = async () => {
       try {
         setLoading(true);
+        setError("");
 
+        // Backend route:
+        // GET /api/students/:studentId/skill-gap?occupationId=...
         const response = await fetch(
-          `/api/students/${studentId}/skill-gap/${encodeURIComponent(
+          `/api/students/${studentId}/skill-gap?occupationId=${encodeURIComponent(
             occupationId
-          )}`
+          )}`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
         );
+
+        // Make sure the backend actually returned JSON.
+        // This prevents:
+        // Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+        const contentType = response.headers.get("content-type") || "";
+
+        if (!contentType.includes("application/json")) {
+          const text = await response.text();
+
+          console.error(
+            "Skill Gap API returned non-JSON response:",
+            response.status,
+            text.slice(0, 200)
+          );
+
+          throw new Error(
+            `Skill Gap API returned ${response.status} instead of JSON.`
+          );
+        }
 
         const result = await response.json();
 
         if (!response.ok || !result.success) {
-          throw new Error(result.message || "Failed to load skill gap");
+          throw new Error(
+            result.message || "Failed to load skill gap"
+          );
         }
 
         setData(result);
       } catch (err) {
+        console.error("Skill Gap error:", err);
+
         setError(
-          err instanceof Error ? err.message : "Something went wrong"
+          err instanceof Error
+            ? err.message
+            : "Something went wrong"
         );
       } finally {
         setLoading(false);
@@ -75,6 +108,7 @@ function SkillGap({ studentId, occupationId, onBack }: Props) {
     loadSkillGap();
   }, [studentId, occupationId]);
 
+  // Loading screen
   if (loading) {
     return (
       <div style={styles.center}>
@@ -84,17 +118,26 @@ function SkillGap({ studentId, occupationId, onBack }: Props) {
     );
   }
 
+  // Error screen
   if (error) {
     return (
       <div style={styles.center}>
         <h2>Unable to load skill gap</h2>
+
         <p>{error}</p>
-        {onBack && <button onClick={onBack}>Back</button>}
+
+        {onBack && (
+          <button onClick={onBack}>
+            Back
+          </button>
+        )}
       </div>
     );
   }
 
-  if (!data) return null;
+  if (!data) {
+    return null;
+  }
 
   const {
     analysis,
@@ -103,79 +146,114 @@ function SkillGap({ studentId, occupationId, onBack }: Props) {
     missing_skills,
   } = data;
 
+  // Learning page
   if (showLearning) {
-  return (
-    <Learning
-      studentId={studentId}
-      occupationId={occupationId}
-      onBack={() => setShowLearning(false)}
-    />
-  );
-}
+    return (
+      <Learning
+        studentId={studentId}
+        occupationId={occupationId}
+        onBack={() => setShowLearning(false)}
+      />
+    );
+  }
 
-if (showAssessment) {
-  return (
-    <AssessmentCenter
-      studentId={studentId}
-      occupationId={occupationId}
-      onBack={() => setShowAssessment(false)}
-    />
-  );
-}
+  // Assessment page
+  if (showAssessment) {
+    return (
+      <AssessmentCenter
+        studentId={studentId}
+        occupationId={occupationId}
+        onBack={() => setShowAssessment(false)}
+      />
+    );
+  }
 
   return (
     <div style={styles.page}>
       <div style={styles.container}>
 
+        {/* Back button */}
         {onBack && (
-          <button style={styles.backButton} onClick={onBack}>
+          <button
+            style={styles.backButton}
+            onClick={onBack}
+          >
             ← Back to Jobs
           </button>
         )}
 
+        {/* Header */}
         <div style={styles.header}>
           <div>
-            <p style={styles.label}>TARGET ROLE</p>
-            <h1>{target_job.occupation_label}</h1>
+            <p style={styles.label}>
+              TARGET ROLE
+            </p>
+
+            <h1>
+              {target_job.occupation_label}
+            </h1>
+
             <p style={styles.description}>
               {target_job.description}
             </p>
           </div>
 
+          {/* Match score */}
           <div style={styles.scoreBox}>
             <div style={styles.score}>
               {analysis.match_percentage}%
             </div>
-            <div style={styles.scoreLabel}>Skill Match</div>
+
+            <div style={styles.scoreLabel}>
+              Skill Match
+            </div>
           </div>
         </div>
 
+        {/* Statistics */}
         <div style={styles.stats}>
+
           <div style={styles.statCard}>
             <span>Required</span>
-            <strong>{analysis.required_skill_count}</strong>
+            <strong>
+              {analysis.required_skill_count}
+            </strong>
           </div>
 
           <div style={styles.statCard}>
             <span>Matched</span>
-            <strong>{analysis.matched_skill_count}</strong>
+            <strong>
+              {analysis.matched_skill_count}
+            </strong>
           </div>
 
           <div style={styles.statCard}>
             <span>Missing</span>
-            <strong>{analysis.missing_skill_count}</strong>
+            <strong>
+              {analysis.missing_skill_count}
+            </strong>
           </div>
 
           <div style={styles.statCard}>
             <span>Skill Gap</span>
-            <strong>{analysis.gap_percentage}%</strong>
+            <strong>
+              {analysis.gap_percentage}%
+            </strong>
           </div>
+
         </div>
 
+        {/* Progress */}
         <div style={styles.progressSection}>
+
           <div style={styles.progressHeader}>
-            <strong>Job Skill Coverage</strong>
-            <span>{analysis.match_percentage}%</span>
+            <strong>
+              Job Skill Coverage
+            </strong>
+
+            <span>
+              {analysis.match_percentage}%
+            </span>
           </div>
 
           <div style={styles.progressBar}>
@@ -186,14 +264,23 @@ if (showAssessment) {
               }}
             />
           </div>
+
         </div>
 
+        {/* Matched / Missing Skills */}
         <div style={styles.grid}>
 
+          {/* Matched Skills */}
           <div style={styles.section}>
+
             <div style={styles.sectionHeader}>
-              <h2>✓ Matched Skills</h2>
-              <span>{matched_skills.length}</span>
+              <h2>
+                ✓ Matched Skills
+              </h2>
+
+              <span>
+                {matched_skills.length}
+              </span>
             </div>
 
             {matched_skills.length === 0 ? (
@@ -202,9 +289,16 @@ if (showAssessment) {
               </p>
             ) : (
               matched_skills.map((skill) => (
-                <div key={skill.skill_id} style={styles.skillCard}>
+                <div
+                  key={skill.skill_id}
+                  style={styles.skillCard}
+                >
+
                   <div>
-                    <strong>{skill.skill}</strong>
+                    <strong>
+                      {skill.skill}
+                    </strong>
+
                     <small>
                       {skill.skill_type}
                     </small>
@@ -213,58 +307,89 @@ if (showAssessment) {
                   <span style={styles.matchedBadge}>
                     {skill.relation_type}
                   </span>
+
                 </div>
               ))
             )}
+
           </div>
 
+          {/* Missing Skills */}
           <div style={styles.section}>
+
             <div style={styles.sectionHeader}>
-              <h2>⚠ Missing Skills</h2>
-              <span>{missing_skills.length}</span>
+              <h2>
+                ⚠ Missing Skills
+              </h2>
+
+              <span>
+                {missing_skills.length}
+              </span>
             </div>
 
             {missing_skills.map((skill) => (
-              <div key={skill.skill_id} style={styles.skillCard}>
+              <div
+                key={skill.skill_id}
+                style={styles.skillCard}
+              >
+
                 <div>
-                  <strong>{skill.skill}</strong>
+                  <strong>
+                    {skill.skill}
+                  </strong>
+
                   <small>
                     {skill.skill_type}
                   </small>
                 </div>
 
-                <button style={styles.learnButton}>
+                <button
+                  style={styles.learnButton}
+                  onClick={() => setShowLearning(true)}
+                >
                   Learn
                 </button>
+
               </div>
             ))}
+
           </div>
 
         </div>
 
+        {/* Next Steps */}
         <div style={styles.nextStep}>
-          <h2>What should you do next?</h2>
+
+          <h2>
+            What should you do next?
+          </h2>
 
           <p>
             Focus on your missing skills to improve your
-            readiness for <strong>{target_job.occupation_label}</strong>.
+            readiness for{" "}
+            <strong>
+              {target_job.occupation_label}
+            </strong>.
           </p>
 
           <div style={styles.actions}>
-            <button
-  style={styles.primaryButton}
-  onClick={() => setShowLearning(true)}
->
-  Start Learning →
-</button>
 
             <button
-  style={styles.secondaryButton}
-  onClick={() => setShowAssessment(true)}
->
-  Take Skill Assessment →
-</button>
+              style={styles.primaryButton}
+              onClick={() => setShowLearning(true)}
+            >
+              Start Learning →
+            </button>
+
+            <button
+              style={styles.secondaryButton}
+              onClick={() => setShowAssessment(true)}
+            >
+              Take Skill Assessment →
+            </button>
+
           </div>
+
         </div>
 
       </div>
@@ -273,6 +398,7 @@ if (showAssessment) {
 }
 
 const styles: Record<string, React.CSSProperties> = {
+
   page: {
     minHeight: "100vh",
     background: "#f5f7fb",

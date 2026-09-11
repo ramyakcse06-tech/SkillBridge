@@ -14,6 +14,7 @@ import assessmentResultsRoutes from "./routes/assessmentResultsRoutes";
 import opportunityRoutes from "./routes/opportunityRoutes";
 import recruiterRoutes from "./routes/recruiterRoutes";
 import documentRoutes from "./routes/documentRoutes";
+import authRoutes from "./routes/authRoutes";
 
 
 import studentRoutes from "./routes/studentRoutes";
@@ -79,6 +80,7 @@ app.use(
   assessmentResultsRoutes
 );
 app.use("/api/documents", documentRoutes);
+app.use("/api/auth", authRoutes);
 
 // Serve the React frontend
 const clientDistPath = path.resolve(process.cwd(), "../client/dist");

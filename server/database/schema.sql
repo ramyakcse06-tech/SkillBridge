@@ -1,3 +1,24 @@
+-- ============================================================
+-- INDUSTRY ACCOUNTS
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS industries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    company_name TEXT NOT NULL,
+
+    email TEXT NOT NULL UNIQUE,
+
+    phone TEXT,
+
+    website TEXT,
+
+    password_hash TEXT NOT NULL,
+
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
 CREATE TABLE IF NOT EXISTS students (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -6,9 +27,9 @@ CREATE TABLE IF NOT EXISTS students (
     education TEXT,
     college TEXT,
     graduation_year INTEGER,
+    password_hash TEXT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-
 
 CREATE TABLE IF NOT EXISTS skills (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
