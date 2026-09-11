@@ -38,7 +38,7 @@ function AptitudeTest({
         setLoading(true);
 
         const response = await fetch(
-          "http://localhost:5000/api/assessments/aptitude/questions?count=10"
+          "/api/assessments/aptitude/questions?count=10"
         );
 
         const result = await response.json();
@@ -617,27 +617,9 @@ const styles: Record<string, React.CSSProperties> = {
     cursor: "pointer",
   },
 
-  skillTags: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "8px",
-    marginTop: "10px",
-  },
+  
 
-  skillTags: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "8px",
-    marginTop: "10px",
-  },
-
-  skillTags: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "8px",
-    marginTop: "10px",
-  },
-
+  
   resultCard: {
     background: "white",
     borderRadius: "20px",

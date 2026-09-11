@@ -118,7 +118,7 @@ export default function IndustryPortal({
   async function loadDashboard() {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/recruiter/dashboard"
+        "/api/recruiter/dashboard"
       );
 
       if (!response.ok) return;
@@ -136,7 +136,7 @@ export default function IndustryPortal({
   async function loadOpportunities() {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/opportunities"
+        "/api/opportunities"
       );
 
       if (!response.ok) return;
@@ -160,7 +160,7 @@ export default function IndustryPortal({
       setSelectedOpportunity(opportunity);
 
       const response = await fetch(
-        `http://localhost:5000/api/recruiter/opportunities/${opportunity.id}/candidates`
+        `/api/recruiter/opportunities/${opportunity.id}/candidates`
       );
 
       if (!response.ok) {
@@ -250,7 +250,7 @@ export default function IndustryPortal({
     );
 
     const response = await fetch(
-      "http://localhost:5000/api/opportunities",
+      "/api/opportunities",
       {
         method: "POST",
 
@@ -318,7 +318,7 @@ export default function IndustryPortal({
   ) {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/recruiter/applications/${applicationId}/status`,
+        `/api/recruiter/applications/${applicationId}/status`,
         {
           method: "PATCH",
           headers: {
@@ -390,7 +390,7 @@ export default function IndustryPortal({
       setMessage("");
 
       const response = await fetch(
-        "http://localhost:5000/api/recruiter/feedback/detailed",
+        "/api/recruiter/feedback/detailed",
         {
           method: "POST",
           headers: {

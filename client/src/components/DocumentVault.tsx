@@ -24,7 +24,7 @@ interface DocumentVaultProps {
 }
 
 const API =
-  "http://localhost:5000/api/documents";
+  "/api/documents";
 
 const documentTypes = [
   "Resume",

@@ -118,7 +118,7 @@ function PlacementReadiness({
       setError("");
 
       const response = await fetch(
-        `http://localhost:5000/api/readiness/${studentId}/${encodeURIComponent(
+        `/api/readiness/${studentId}/${encodeURIComponent(
           occupationId
         )}`
       );
@@ -179,7 +179,7 @@ function PlacementReadiness({
       setWhatIfLoading(true);
 
       const response = await fetch(
-        `http://localhost:5000/api/readiness/${studentId}/${encodeURIComponent(
+        `/api/readiness/${studentId}/${encodeURIComponent(
           occupationId
         )}/what-if`,
         {

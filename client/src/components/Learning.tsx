@@ -51,7 +51,7 @@ function Learning({
     const loadLearning = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/students/${studentId}/learning/${encodeURIComponent(
+          `/api/students/${studentId}/learning/${encodeURIComponent(
             occupationId
           )}`
         );

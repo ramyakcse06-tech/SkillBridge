@@ -85,7 +85,7 @@ function CodingTest({
         setError("");
 
         const response = await fetch(
-          "http://localhost:5000/api/assessments/coding/problems?count=5"
+          "/api/assessments/coding/problems?count=5"
         );
 
         const result = await response.json();
@@ -242,7 +242,7 @@ function CodingTest({
       setRunResult(null);
 
       const response = await fetch(
-        "http://localhost:5000/api/assessments/coding/run",
+        "/api/assessments/coding/run",
         {
           method: "POST",
 
@@ -417,7 +417,7 @@ function CodingTest({
     try {
       const response =
         await fetch(
-          "http://localhost:5000/api/assessment-results/coding",
+          "/api/assessment-results/coding",
           {
             method: "POST",
 

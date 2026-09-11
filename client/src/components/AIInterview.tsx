@@ -81,7 +81,7 @@ declare global {
 }
 
 const API =
-  "http://localhost:5000/api/assessments/interview";
+  "/api/assessments/interview";
 
 function AIInterview({
   studentId,

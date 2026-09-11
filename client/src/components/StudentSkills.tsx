@@ -26,7 +26,7 @@ function StudentSkills() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/students/1/skills")
+    fetch("/api/students/1/skills")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch skills");

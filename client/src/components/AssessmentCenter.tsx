@@ -87,7 +87,7 @@ function AssessmentCenter({
         setError("");
 
         const response = await fetch(
-          `http://localhost:5000/api/students/${studentId}/skill-gap/${encodeURIComponent(
+          `/api/students/${studentId}/skill-gap/${encodeURIComponent(
             occupationId
           )}`
         );

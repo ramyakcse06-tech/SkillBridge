@@ -15,9 +15,12 @@ import opportunityRoutes from "./routes/opportunityRoutes";
 import recruiterRoutes from "./routes/recruiterRoutes";
 import documentRoutes from "./routes/documentRoutes";
 
+
 import studentRoutes from "./routes/studentRoutes";
 import resumeRoutes from "./routes/resumeRoutes";
 import skillRoutes from "./routes/skillRoutes";
+
+import path from "path";
 
 dotenv.config();
 
@@ -76,6 +79,19 @@ app.use(
   assessmentResultsRoutes
 );
 app.use("/api/documents", documentRoutes);
+
+// Serve the React frontend
+const clientDistPath = path.resolve(process.cwd(), "../client/dist");
+
+app.use(express.static(clientDistPath));
+
+app.use((req, res, next) => {
+  if (req.path.startsWith("/api/")) {
+    return next();
+  }
+
+  res.sendFile(path.join(clientDistPath, "index.html"));
+});
 
 const PORT = process.env.PORT || 5000;
 

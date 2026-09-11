@@ -170,7 +170,7 @@ export default function ResumeUpload({
 
       const response =
         await fetch(
-          "http://localhost:5000/api/resume/upload",
+          "/api/resume/upload",
           {
             method: "POST",
             body: formData,

@@ -107,7 +107,7 @@ function TargetJob() {
       setShowSkillGap(false);
 
       const response = await fetch(
-        `http://localhost:5000/api/jobs/search?q=${encodeURIComponent(
+        `/api/jobs/search?q=${encodeURIComponent(
           query.trim()
         )}`
       );
@@ -144,7 +144,7 @@ function TargetJob() {
       setShowSkillGap(false);
 
       const response = await fetch(
-        `http://localhost:5000/api/jobs/${encodeURIComponent(
+        `/api/jobs/${encodeURIComponent(
           job.occupation_id
         )}`
       );

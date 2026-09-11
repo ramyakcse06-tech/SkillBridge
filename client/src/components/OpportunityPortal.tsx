@@ -84,7 +84,7 @@ export default function OpportunityPortal({
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/opportunities"
+        "/api/opportunities"
       );
 
       if (!response.ok) {
@@ -109,7 +109,7 @@ export default function OpportunityPortal({
   async function loadApplications() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/opportunities/student/${studentId}/applications`
+        `/api/opportunities/student/${studentId}/applications`
       );
 
       if (!response.ok) return;
@@ -129,7 +129,7 @@ export default function OpportunityPortal({
   async function loadStudentSkills() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/students/${studentId}/skills`
+        `/api/students/${studentId}/skills`
       );
 
       if (!response.ok) return;
@@ -241,7 +241,7 @@ export default function OpportunityPortal({
       setMessage("");
 
       const response = await fetch(
-        `http://localhost:5000/api/opportunities/${opportunityId}/apply`,
+        `/api/opportunities/${opportunityId}/apply`,
         {
           method: "POST",
           headers: {

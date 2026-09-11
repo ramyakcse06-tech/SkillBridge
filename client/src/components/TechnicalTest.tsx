@@ -55,7 +55,7 @@ function TechnicalTest({
         setError("");
 
         const response = await fetch(
-          "http://localhost:5000/api/assessments/technical/questions?count=10"
+          "/api/assessments/technical/questions?count=10"
         );
 
         const result = await response.json();
@@ -160,7 +160,7 @@ function TechnicalTest({
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/assessment-results/technical",
+      "/api/assessment-results/technical",
       {
         method: "POST",
         headers: {
