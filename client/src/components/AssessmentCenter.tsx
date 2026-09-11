@@ -86,11 +86,37 @@ function AssessmentCenter({
         setLoading(true);
         setError("");
 
+        // Load the student's skill-gap data.
+        // Backend route:
+        // GET /api/students/:studentId/skill-gap?occupationId=...
         const response = await fetch(
-          `/api/students/${studentId}/skill-gap/${encodeURIComponent(
+          `/api/students/${studentId}/skill-gap?occupationId=${encodeURIComponent(
             occupationId
-          )}`
+          )}`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
         );
+
+        // Prevent HTML responses from causing:
+        // Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+        const contentType = response.headers.get("content-type") || "";
+
+        if (!contentType.includes("application/json")) {
+          const text = await response.text();
+
+          console.error(
+            "Skill Gap API returned non-JSON response:",
+            response.status,
+            text.slice(0, 200)
+          );
+
+          throw new Error(
+            `Skill Gap API returned ${response.status} instead of JSON.`
+          );
+        }
 
         const result = await response.json();
 
